@@ -1757,31 +1757,190 @@ display: none;
 <!-- rnb-text-begin -->
 <div id="cyclistic-casual-vs-member-ridership" class="section level1">
 <h1>Cyclistic: Casual vs Member Ridership</h1>
-<div id="setup-env" class="section level3">
-<h3>Setup Env</h3>
+<div id="enviroment-setup" class="section level4">
+<h4>Enviroment Setup</h4>
+<pre><code>readr for loading CSV
+filestidyverse for knitting
+fileggplot for visuals
+ggsci for visual theme improvement
+flexadashboard for final visual layout</code></pre>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjMwN19kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDIzMDctZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202307_divvy_tripdata &lt;- read_csv(&quot;CSV/202307-divvy-tripdata.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzY3NjUwIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 767650 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjMwOF9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDIzMDgtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202308_divvy_tripdata &lt;- read_csv(&quot;CSV/202308-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzcxNjkzIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 771693 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjMwOV9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDIzMDktZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202309_divvy_tripdata &lt;- read_csv(&quot;CSV/202309-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNjY2MzcxIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 666371 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjMxMF9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDIzMTAtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202310_divvy_tripdata &lt;- read_csv(&quot;CSV/202310-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNTM3MTEzIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 537113 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjMxMV9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDIzMTEtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202311_divvy_tripdata &lt;- read_csv(&quot;CSV/202311-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzYyNTE4IENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 362518 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjMxMl9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDIzMTItZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202312_divvy_tripdata &lt;- read_csv(&quot;CSV/202312-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjI0MDczIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 224073 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjQwMV9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDI0MDEtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202401_divvy_tripdata &lt;- read_csv(&quot;CSV/202401-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMTQ0ODczIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 144873 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjQwMl9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDI0MDItZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202402_divvy_tripdata &lt;- read_csv(&quot;CSV/202402-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjIzMTY0IENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 223164 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjQwM19kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDI0MDMtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202403_divvy_tripdata &lt;- read_csv(&quot;CSV/202403-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzAxNjg3IENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 301687 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjQwNF9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDI0MDQtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202404_divvy_tripdata &lt;- read_csv(&quot;CSV/202404-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNDE1MDI1IENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 415025 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjQwNV9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDI0MDUtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202405_divvy_tripdata &lt;- read_csv(&quot;CSV/202405-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNjA5NDkzIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 609493 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWDIwMjQwNl9kaXZ2eV90cmlwZGF0YSA8LSByZWFkX2NzdihcIkNTVi8yMDI0MDYtZGl2dnktdHJpcGRhdGEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>X202406_divvy_tripdata &lt;- read_csv(&quot;CSV/202406-divvy-tripdata.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNzEwNzIxIENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg3KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBzdGFydF9zdGF0aW9uX2lkLCBlbmRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9pZCwgbWVtYmVyX2Nhc3VhbFxuZGJsICAoNCk6IHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 710721 Columns: 13
+── Column specification ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr  (7): ride_id, rideable_type, start_station_name, start_station_id, end_station_name, end_station_id, member_casual
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
-<!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCmF1dGhvcjogIkdyZWdvcnkgV2hpdG1vcmUiDQpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiwgJVknKWAiDQotLS0NCg0KIyBDeWNsaXN0aWM6IENhc3VhbCB2cyBNZW1iZXIgUmlkZXJzaGlwDQoNCiMjIyBTZXR1cCBFbnYNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShmbGV4ZGFzaGJvYXJkKQ0KbGlicmFyeShnZ3NjaSkNCmBgYA0KDQpgYGB7cn0NCnBsb3QoY2FycykNCmBgYA0KDQpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouDQoNCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ3RybCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLg0KDQpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCmF1dGhvcjogIkdyZWdvcnkgV2hpdG1vcmUiDQpkYXRlOiAiYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiwgJVknKWAiDQotLS0NCg0KIyBDeWNsaXN0aWM6IENhc3VhbCB2cyBNZW1iZXIgUmlkZXJzaGlwDQoNCiMjIyMgRW52aXJvbWVudCBTZXR1cA0KDQpgYGAgICAgICAgICANCnJlYWRyIGZvciBsb2FkaW5nIENTVg0KZmlsZXN0aWR5dmVyc2UgZm9yIGtuaXR0aW5nDQpmaWxlZ2dwbG90IGZvciB2aXN1YWxzDQpnZ3NjaSBmb3IgdmlzdWFsIHRoZW1lIGltcHJvdmVtZW50DQpmbGV4YWRhc2hib2FyZCBmb3IgZmluYWwgdmlzdWFsIGxheW91dA0KYGBgDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KbGlicmFyeShmbGV4ZGFzaGJvYXJkKQ0KbGlicmFyeShnZ3NjaSkNCmBgYA0KDQpgYGB7ciBkYXRhbG9hZH0NClgyMDIzMDdfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDIzMDctZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDIzMDhfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDIzMDgtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDIzMDlfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDIzMDktZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDIzMTBfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDIzMTAtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDIzMTFfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDIzMTEtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDIzMTJfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDIzMTItZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDI0MDFfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDI0MDEtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDI0MDJfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDI0MDItZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDI0MDNfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDI0MDMtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDI0MDRfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDI0MDQtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDI0MDVfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDI0MDUtZGl2dnktdHJpcGRhdGEuY3N2IikNClgyMDI0MDZfZGl2dnlfdHJpcGRhdGEgPC0gcmVhZF9jc3YoIkNTVi8yMDI0MDYtZGl2dnktdHJpcGRhdGEuY3N2IikNCmBgYA0K</div>
 
 
 

@@ -7,7 +7,16 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 
 # Cyclistic: Casual vs Member Ridership
 
-### Setup Env
+#### Enviroment Setup
+
+```         
+readr for loading CSV
+filestidyverse for knitting
+fileggplot for visuals
+ggsci for visual theme improvement
+flexadashboard for final visual layout
+```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(readr)
@@ -17,12 +26,17 @@ library(flexdashboard)
 library(ggsci)
 ```
 
-```{r}
-plot(cars)
+```{r dataload}
+X202307_divvy_tripdata <- read_csv("CSV/202307-divvy-tripdata.csv")
+X202308_divvy_tripdata <- read_csv("CSV/202308-divvy-tripdata.csv")
+X202309_divvy_tripdata <- read_csv("CSV/202309-divvy-tripdata.csv")
+X202310_divvy_tripdata <- read_csv("CSV/202310-divvy-tripdata.csv")
+X202311_divvy_tripdata <- read_csv("CSV/202311-divvy-tripdata.csv")
+X202312_divvy_tripdata <- read_csv("CSV/202312-divvy-tripdata.csv")
+X202401_divvy_tripdata <- read_csv("CSV/202401-divvy-tripdata.csv")
+X202402_divvy_tripdata <- read_csv("CSV/202402-divvy-tripdata.csv")
+X202403_divvy_tripdata <- read_csv("CSV/202403-divvy-tripdata.csv")
+X202404_divvy_tripdata <- read_csv("CSV/202404-divvy-tripdata.csv")
+X202405_divvy_tripdata <- read_csv("CSV/202405-divvy-tripdata.csv")
+X202406_divvy_tripdata <- read_csv("CSV/202406-divvy-tripdata.csv")
 ```
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
