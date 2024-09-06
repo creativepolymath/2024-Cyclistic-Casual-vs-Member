@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<!-- build 20242.24.0711.1636                               -->
-<workbook original-version='18.1' source-build='2024.2.1 (20242.24.0711.1636)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<!-- build 20242.24.0807.0327                               -->
+<workbook original-version='18.1' source-build='2024.2.2 (20242.24.0807.0327)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
     <_.fcp.MarkAnimation.true...MarkAnimation />
@@ -23,85 +23,58 @@
     </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
   </_.fcp.AnimationOnByDefault.false...style>
   <datasources>
-    <datasource caption='202307-divvy-tripdata.csv (Multiple Connections)' inline='true' name='federated.1g0mp8b0fb58li0ztrjra00hpe37' version='18.1'>
+    <datasource caption='all_trips_v2' inline='true' name='federated.18nbuft13uravi140fjtb1442ip9' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='202307-divvy-tripdata' name='textscan.09z8l9817dhm0o1cotw8j10j1ixu'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202307-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202308-divvy-tripdata' name='textscan.1jl9nl617kcutc1b1fadd1b9kdwn'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202308-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202309-divvy-tripdata' name='textscan.09v9ddr0nm58h81h4yjqm0lfpy89'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202309-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202310-divvy-tripdata' name='textscan.1r0r2w81qsjn021fcqh6d1inuqk1'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202310-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202311-divvy-tripdata' name='textscan.07yawdq1pz32ag1gfelom1av697k'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202311-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202312-divvy-tripdata' name='textscan.0215v9a0cbq7pz15qxfhi1rghsjk'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202312-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202401-divvy-tripdata' name='textscan.1hpdjh2080sbtj10pnou812otfwe'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202401-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202402-divvy-tripdata' name='textscan.117z1cy11smdy71dqqjvh1ycbfho'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202402-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202403-divvy-tripdata' name='textscan.15u2b3n0ye806u17hgr9e0xqpisq'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202403-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202404-divvy-tripdata' name='textscan.0k3clj70dw87b4115rmes12a9drv'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202404-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202405-divvy-tripdata' name='textscan.1y14k760252kwy11qiue804tymka'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202405-divvy-tripdata.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='202406-divvy-tripdata' name='textscan.1rwatp81x5rytx1fyxyk9122h1ia'>
-            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/CSV' filename='202406-divvy-tripdata.csv' password='' server='' />
+          <named-connection caption='all_trips_v2' name='textscan.1syfg7e0qak5bt1c20h8c13aj22s'>
+            <connection class='textscan' directory='D:/OneDrive/Coursera/CaseStudy-BikeShare/2024-Cyclistic-Casual-vs-Member/output_CSV' filename='all_trips_v2.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.09z8l9817dhm0o1cotw8j10j1ixu' name='202307-divvy-tripdata.csv' table='[202307-divvy-tripdata#csv]' type='table'>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1syfg7e0qak5bt1c20h8c13aj22s' name='all_trips_v2.csv' table='[all_trips_v2#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='ride_id' ordinal='0' />
-            <column datatype='string' name='rideable_type' ordinal='1' />
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='ride_id' ordinal='1' />
             <column datatype='datetime' name='started_at' ordinal='2' />
             <column datatype='datetime' name='ended_at' ordinal='3' />
-            <column datatype='string' name='start_station_name' ordinal='4' />
-            <column datatype='string' name='start_station_id' ordinal='5' />
-            <column datatype='string' name='end_station_name' ordinal='6' />
-            <column datatype='string' name='end_station_id' ordinal='7' />
-            <column datatype='real' name='start_lat' ordinal='8' />
-            <column datatype='real' name='start_lng' ordinal='9' />
-            <column datatype='real' name='end_lat' ordinal='10' />
-            <column datatype='real' name='end_lng' ordinal='11' />
-            <column datatype='string' name='member_casual' ordinal='12' />
+            <column datatype='integer' name='rideable_type' ordinal='4' />
+            <column datatype='integer' name='start_station_id' ordinal='5' />
+            <column datatype='string' name='start_station_name' ordinal='6' />
+            <column datatype='integer' name='end_station_id' ordinal='7' />
+            <column datatype='string' name='end_station_name' ordinal='8' />
+            <column datatype='string' name='member_casual' ordinal='9' />
+            <column datatype='date' name='date' ordinal='10' />
+            <column datatype='integer' name='month' ordinal='11' />
+            <column datatype='integer' name='day' ordinal='12' />
+            <column datatype='integer' name='year' ordinal='13' />
+            <column datatype='string' name='day_of_week' ordinal='14' />
+            <column datatype='integer' name='ride_length' ordinal='15' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.09z8l9817dhm0o1cotw8j10j1ixu' name='202307-divvy-tripdata.csv' table='[202307-divvy-tripdata#csv]' type='table'>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1syfg7e0qak5bt1c20h8c13aj22s' name='all_trips_v2.csv' table='[all_trips_v2#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='ride_id' ordinal='0' />
-            <column datatype='string' name='rideable_type' ordinal='1' />
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='ride_id' ordinal='1' />
             <column datatype='datetime' name='started_at' ordinal='2' />
             <column datatype='datetime' name='ended_at' ordinal='3' />
-            <column datatype='string' name='start_station_name' ordinal='4' />
-            <column datatype='string' name='start_station_id' ordinal='5' />
-            <column datatype='string' name='end_station_name' ordinal='6' />
-            <column datatype='string' name='end_station_id' ordinal='7' />
-            <column datatype='real' name='start_lat' ordinal='8' />
-            <column datatype='real' name='start_lng' ordinal='9' />
-            <column datatype='real' name='end_lat' ordinal='10' />
-            <column datatype='real' name='end_lng' ordinal='11' />
-            <column datatype='string' name='member_casual' ordinal='12' />
+            <column datatype='integer' name='rideable_type' ordinal='4' />
+            <column datatype='integer' name='start_station_id' ordinal='5' />
+            <column datatype='string' name='start_station_name' ordinal='6' />
+            <column datatype='integer' name='end_station_id' ordinal='7' />
+            <column datatype='string' name='end_station_name' ordinal='8' />
+            <column datatype='string' name='member_casual' ordinal='9' />
+            <column datatype='date' name='date' ordinal='10' />
+            <column datatype='integer' name='month' ordinal='11' />
+            <column datatype='integer' name='day' ordinal='12' />
+            <column datatype='integer' name='year' ordinal='13' />
+            <column datatype='string' name='day_of_week' ordinal='14' />
+            <column datatype='integer' name='ride_length' ordinal='15' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -115,95 +88,83 @@
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>ride_id</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[ride_id]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>ride_id</remote-alias>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
             <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>rideable_type</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[rideable_type]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>rideable_type</remote-alias>
+            <remote-name>ride_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ride_id]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>ride_id</remote-alias>
             <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>started_at</remote-name>
             <remote-type>135</remote-type>
             <local-name>[started_at]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
             <remote-alias>started_at</remote-alias>
             <ordinal>2</ordinal>
             <local-type>datetime</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>ended_at</remote-name>
             <remote-type>135</remote-type>
             <local-name>[ended_at]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
             <remote-alias>ended_at</remote-alias>
             <ordinal>3</ordinal>
             <local-type>datetime</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rideable_type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rideable_type]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>rideable_type</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_station_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[start_station_id]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>start_station_id</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>start_station_name</remote-name>
             <remote-type>129</remote-type>
             <local-name>[start_station_name]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
             <remote-alias>start_station_name</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>start_station_id</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[start_station_id]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>start_station_id</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>end_station_name</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[end_station_name]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>end_station_name</remote-alias>
             <ordinal>6</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
@@ -211,137 +172,176 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>end_station_id</remote-name>
-            <remote-type>129</remote-type>
+            <remote-type>20</remote-type>
             <local-name>[end_station_id]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
             <remote-alias>end_station_id</remote-alias>
             <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_station_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[end_station_name]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>end_station_name</remote-alias>
+            <ordinal>8</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>start_lat</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[start_lat]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>start_lat</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>start_lng</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[start_lng]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>start_lng</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>end_lat</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[end_lat]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>end_lat</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>end_lng</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[end_lng]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
-            <remote-alias>end_lng</remote-alias>
-            <ordinal>11</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>member_casual</remote-name>
             <remote-type>129</remote-type>
             <local-name>[member_casual]</local-name>
-            <parent-name>[202307-divvy-tripdata.csv]</parent-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
             <remote-alias>member_casual</remote-alias>
-            <ordinal>12</ordinal>
+            <ordinal>9</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>day</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_week</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_of_week]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>day_of_week</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ride_length</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ride_length]</local-name>
+            <parent-name>[all_trips_v2.csv]</parent-name>
+            <remote-alias>ride_length</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <_.fcp.ObjectModelTableType.true...column caption='202307-divvy-tripdata.csv' datatype='table' name='[__tableau_internal_object_id__].[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]' role='measure' type='quantitative' />
-      <column aggregation='Avg' caption='End Lat' datatype='real' name='[end_lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
-      <column caption='End Lng' datatype='real' name='[end_lng]' role='measure' type='quantitative' />
-      <column caption='End Station Id' datatype='string' name='[end_station_id]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='all_trips_v2.csv' datatype='table' name='[__tableau_internal_object_id__].[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Day' datatype='integer' name='[day]' role='dimension' type='quantitative' />
+      <column caption='Day Of Week' datatype='string' name='[day_of_week]' role='dimension' type='nominal' />
+      <column caption='End Station Id' datatype='integer' name='[end_station_id]' role='dimension' type='ordinal' />
       <column caption='End Station Name' datatype='string' name='[end_station_name]' role='dimension' type='nominal' />
       <column caption='Ended At' datatype='datetime' name='[ended_at]' role='dimension' type='ordinal' />
       <column caption='Member Casual' datatype='string' name='[member_casual]' role='dimension' type='nominal' />
-      <column caption='Ride Id' datatype='string' name='[ride_id]' role='dimension' type='nominal' />
-      <column caption='Rideable Type' datatype='string' name='[rideable_type]' role='dimension' type='nominal' />
-      <column aggregation='Avg' caption='Start Lat' datatype='real' name='[start_lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
-      <column caption='Start Lng' datatype='real' name='[start_lng]' role='measure' type='quantitative' />
-      <column caption='Start Station Id' datatype='string' name='[start_station_id]' role='dimension' type='nominal' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Ride Id' datatype='integer' name='[ride_id]' role='dimension' type='ordinal' />
+      <column caption='Ride Length' datatype='integer' name='[ride_length]' role='measure' type='quantitative' />
+      <column caption='Rideable Type' datatype='integer' name='[rideable_type]' role='measure' type='quantitative' />
+      <column caption='Start Station Id' datatype='integer' name='[start_station_id]' role='dimension' type='ordinal' />
       <column caption='Start Station Name' datatype='string' name='[start_station_name]' role='dimension' type='nominal' />
       <column caption='Started At' datatype='datetime' name='[started_at]' role='dimension' type='ordinal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/gwhit/AppData/Local/Temp/TableauTemp/#TableauTemp_16uzqsf17lvmx70zj7hgh09jlpdy.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/25/2024 04:48:00 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/gwhit/AppData/Local/Temp/TableauTemp/#TableauTemp_1gcj6j51m6lkdn1c0bzot10zgs1w.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='09/05/2024 01:34:46 PM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>788189</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
               <remote-name>ride_id</remote-name>
-              <remote-type>129</remote-type>
+              <remote-type>20</remote-type>
               <local-name>[ride_id]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>ride_id</remote-alias>
-              <ordinal>0</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>767650</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>rideable_type</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[rideable_type]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>rideable_type</remote-alias>
               <ordinal>1</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>3</approx-count>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>515954</approx-count>
               <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>started_at</remote-name>
@@ -350,12 +350,12 @@
               <parent-name>[Extract]</parent-name>
               <remote-alias>started_at</remote-alias>
               <ordinal>2</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
+              <family>all_trips_v2.csv</family>
               <local-type>datetime</local-type>
               <aggregation>Year</aggregation>
-              <approx-count>735322</approx-count>
+              <approx-count>777411</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>ended_at</remote-name>
@@ -364,12 +364,40 @@
               <parent-name>[Extract]</parent-name>
               <remote-alias>ended_at</remote-alias>
               <ordinal>3</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
+              <family>all_trips_v2.csv</family>
               <local-type>datetime</local-type>
               <aggregation>Year</aggregation>
-              <approx-count>713768</approx-count>
+              <approx-count>788189</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rideable_type</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[rideable_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rideable_type</remote-alias>
+              <ordinal>4</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24959</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_station_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[start_station_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_station_id</remote-alias>
+              <ordinal>5</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1293</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>start_station_name</remote-name>
@@ -377,29 +405,28 @@
               <local-name>[start_station_name]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>start_station_name</remote-alias>
-              <ordinal>4</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
+              <ordinal>6</ordinal>
+              <family>all_trips_v2.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>1793</approx-count>
+              <approx-count>1347</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>start_station_id</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[start_station_id]</local-name>
+              <remote-name>end_station_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[end_station_id]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>start_station_id</remote-alias>
-              <ordinal>5</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>1781</approx-count>
+              <remote-alias>end_station_id</remote-alias>
+              <ordinal>7</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1245</approx-count>
               <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>end_station_name</remote-name>
@@ -407,85 +434,14 @@
               <local-name>[end_station_name]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>end_station_name</remote-alias>
-              <ordinal>6</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>1602</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>end_station_id</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[end_station_id]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>end_station_id</remote-alias>
-              <ordinal>7</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>1589</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>start_lat</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[start_lat]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>start_lat</remote-alias>
               <ordinal>8</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>34765</approx-count>
+              <family>all_trips_v2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1305</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>start_lng</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[start_lng]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>start_lng</remote-alias>
-              <ordinal>9</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>35601</approx-count>
-              <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>end_lat</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[end_lat]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>end_lat</remote-alias>
-              <ordinal>10</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>1987</approx-count>
-              <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>end_lng</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[end_lng]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>end_lng</remote-alias>
-              <ordinal>11</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>1962</approx-count>
-              <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>member_casual</remote-name>
@@ -493,14 +449,99 @@
               <local-name>[member_casual]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>member_casual</remote-alias>
-              <ordinal>12</ordinal>
-              <family>202307-divvy-tripdata.csv</family>
+              <ordinal>9</ordinal>
+              <family>all_trips_v2.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
               <approx-count>2</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>10</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>193</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>11</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[day]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>day</remote-alias>
+              <ordinal>12</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>13</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_of_week</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_of_week]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>day_of_week</remote-alias>
+              <ordinal>14</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ride_length</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ride_length]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ride_length</remote-alias>
+              <ordinal>15</ordinal>
+              <family>all_trips_v2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9875</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -511,23 +552,26 @@
       </semantic-values>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
-          <object caption='202307-divvy-tripdata.csv' id='202307-divvy-tripdata.csv_C884E03EB7FD4DDCBF7A4B3A0BC42B04'>
+          <object caption='all_trips_v2.csv' id='all_trips_v2.csv_957182FE4EB04DCE8F4186764CDA01F4'>
             <properties context=''>
-              <relation connection='textscan.09z8l9817dhm0o1cotw8j10j1ixu' name='202307-divvy-tripdata.csv' table='[202307-divvy-tripdata#csv]' type='table'>
+              <relation connection='textscan.1syfg7e0qak5bt1c20h8c13aj22s' name='all_trips_v2.csv' table='[all_trips_v2#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='ride_id' ordinal='0' />
-                  <column datatype='string' name='rideable_type' ordinal='1' />
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='ride_id' ordinal='1' />
                   <column datatype='datetime' name='started_at' ordinal='2' />
                   <column datatype='datetime' name='ended_at' ordinal='3' />
-                  <column datatype='string' name='start_station_name' ordinal='4' />
-                  <column datatype='string' name='start_station_id' ordinal='5' />
-                  <column datatype='string' name='end_station_name' ordinal='6' />
-                  <column datatype='string' name='end_station_id' ordinal='7' />
-                  <column datatype='real' name='start_lat' ordinal='8' />
-                  <column datatype='real' name='start_lng' ordinal='9' />
-                  <column datatype='real' name='end_lat' ordinal='10' />
-                  <column datatype='real' name='end_lng' ordinal='11' />
-                  <column datatype='string' name='member_casual' ordinal='12' />
+                  <column datatype='integer' name='rideable_type' ordinal='4' />
+                  <column datatype='integer' name='start_station_id' ordinal='5' />
+                  <column datatype='string' name='start_station_name' ordinal='6' />
+                  <column datatype='integer' name='end_station_id' ordinal='7' />
+                  <column datatype='string' name='end_station_name' ordinal='8' />
+                  <column datatype='string' name='member_casual' ordinal='9' />
+                  <column datatype='date' name='date' ordinal='10' />
+                  <column datatype='integer' name='month' ordinal='11' />
+                  <column datatype='integer' name='day' ordinal='12' />
+                  <column datatype='integer' name='year' ordinal='13' />
+                  <column datatype='string' name='day_of_week' ordinal='14' />
+                  <column datatype='integer' name='ride_length' ordinal='15' />
                 </columns>
               </relation>
             </properties>
@@ -541,6 +585,36 @@
   </datasources>
   <worksheets>
     <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='all_trips_v2' name='federated.18nbuft13uravi140fjtb1442ip9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.18nbuft13uravi140fjtb1442ip9'>
+            <column-instance column='[ride_length]' derivation='Avg' name='[avg:ride_length:qk]' pivot='key' type='quantitative' />
+            <column caption='Day Of Week' datatype='string' name='[day_of_week]' role='dimension' type='nominal' />
+            <column caption='Member Casual' datatype='string' name='[member_casual]' role='dimension' type='nominal' />
+            <column-instance column='[day_of_week]' derivation='None' name='[none:day_of_week:nk]' pivot='key' type='nominal' />
+            <column-instance column='[member_casual]' derivation='None' name='[none:member_casual:nk]' pivot='key' type='nominal' />
+            <column caption='Ride Length' datatype='integer' name='[ride_length]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.18nbuft13uravi140fjtb1442ip9].[none:day_of_week:nk] / [federated.18nbuft13uravi140fjtb1442ip9].[none:member_casual:nk])</rows>
+        <cols>[federated.18nbuft13uravi140fjtb1442ip9].[avg:ride_length:qk]</cols>
+      </table>
+      <simple-id uuid='{0D65428A-D6EB-4D7C-8796-B0A23AE00088}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
       <table>
         <view>
           <datasources />
@@ -558,7 +632,7 @@
         <rows />
         <cols />
       </table>
-      <simple-id uuid='{DD22873B-7043-43F9-9E9D-4C9EDBCA27FB}' />
+      <simple-id uuid='{15744289-B51C-43D8-A70C-B88B913F9580}' />
     </worksheet>
   </worksheets>
   <windows source-height='30'>
@@ -583,11 +657,237 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{073B90AE-52C7-4008-B5CE-670D19CC9800}' />
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.18nbuft13uravi140fjtb1442ip9].[none:day_of_week:nk]</field>
+            <field>[federated.18nbuft13uravi140fjtb1442ip9].[none:member_casual:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{03A61429-46D7-4813-B93F-0C1F1AEA6B63}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{54AB1055-C598-49FA-A360-6BCB4010FF66}' />
     </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      C6qCAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
       AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
       gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI

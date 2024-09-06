@@ -1,13 +1,36 @@
+body {
+  font-family: "News Cycle","Arial Narrow Bold",sans-serif;
+  background-color: #e4eff2;
+}
+
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
     z-index: 2;
     color: #000000;
     background-color: #ffffff;
     border-color: #000000;
 }
-body {
-  font-family: "News Cycle","Arial Narrow Bold",sans-serif;
+
+.r {
+  background-color: #c2cccf;
+}
+.r.hljs {
+  color: #ffffff;
+}
+.hljs-comment {
+  color: #9D7753 ;
+}
+.hljs-string {
+  color: #9D7753 ;
+}
+a {
+  color: #296473;
+}
+a:hover{
+  color: #9D7753;
+}
+code {
+  font-family: sans-serif;
+  font: "Arial"";
 }
 
-#nextsteps {
-  color: blue;
-}
+

@@ -7,44 +7,45 @@ output:
     theme: journal
     toc: true
     toc_float: true
-      #collapsed: true
     smooth_scroll: true
     toc_depth: 4
     number_sections: true
     css: "html/style.css"
     includes:
+      before_body: "html/header.html"
       after_body: "html/footer.html"
 ---
 
 ------------------------------------------------------------------------
 
-# `r fa("r-project", fill = "purple")` Environment Setup
+# `r fa("r-project", fill = "#296473")` Environment Setup
 
 ```         
 readr for loading CSV files
+scakes for better graph scales
 tidyverse for knitting file
 conflicted to manage and set conflict repairs
 ggplot for visuals
-ggsci for visual theme improvement
-flexadashboard & fontawesome for final visual layout
+fontawesome for final visual layout
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(readr)
+library(readr) # load csv files
+library(scales) # better control of graph scales
 library(tidyverse)
-library(conflicted)
-library(ggplot2)
-library(ggsci)
+library(conflicted) # needed?
+library(ggplot2) # 
+#library(ggsci)
 #library(flexdashboard)
-library(fontawesome)
+library(fontawesome) # awesome icons in TOC
 conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
 
 ------------------------------------------------------------------------
 
-## `r fa("hard-drive", fill = "purple")` Load Data Set from CSV
+## `r fa("file-csv", fill = "#296473")` Load Data from CSV
 
 ```{r dataload, echo=TRUE}
 q1_2019 <- read_csv("CSV/Divvy_Trips_2019_Q1.csv")
@@ -53,16 +54,16 @@ q1_2020 <- read_csv("CSV/Divvy_Trips_2020_Q1.csv")
 
 ------------------------------------------------------------------------
 
-## `r fa("broom", fill = "purple")` Clean and Combine
+# `r fa("broom", fill = "#296473")` Clean and Combine
 
-### Verify Column Names
+## Verify Column Names
 
 ```{r quick-compare}
 colnames(q1_2019)
 colnames(q1_2020)
 ```
 
-#### Rename Columns for Consistency
+### Rename Columns of 'q1_2019.csv' for Consistency
 
 ```{r column-rename}
 (q1_2019 <- rename(q1_2019
@@ -78,36 +79,38 @@ colnames(q1_2020)
  ))
 ```
 
-### Inspect the dataframes
+## Inspect the Dataframes
 
 ```{r inspection-quarters}
 str(q1_2019)
 str(q1_2020)
 ```
 
-#### Convert ride_id and rideable_type to chr
+### Convert ride_id and rideable_type columns to CHR
 
 ```{r character-conv}
-q1_2019 <- mutate(q1_2019, ride_id = as.character(ride_id)
- ,rideable_type = as.character(rideable_type))
+q1_2019 <- mutate(q1_2019, ride_id = as.character(ride_id), rideable_type = as.character(rideable_type))
+```
+```{r}
+str(q1_2019)
 ```
 
-#### stack quarters data frames into one
+# `r fa("broom", fill = "#296473")` Create and Clean New Table 'all_trips'
+
+## Stack Quarter Dataframes into One
 
 ```{r stackemup}
-all_trips <- bind_rows(q1_2019, q1_2020)#, q3_2019)#, q4_2019, q1_2020)
+all_trips <- bind_rows(q1_2019, q1_2020)
 ```
 
-#### remove lat, long, birthyear and gender
+## Remove lat, long, birthyear, and gender
 
 ```{r removal-unnec}
 all_trips <- all_trips %>%
-  select(-c(start_lat, start_lng, end_lat, end_lng, birthyear, gender, "tripduration"))
+  select(-c(start_lat, start_lng, end_lat, end_lng, birthyear, gender, tripduration))
 ```
 
-## Clean and prepare new table "all_trips"
-
-### Load 'all_trips' Preview
+## Load 'all_trips' and Preview
 
 ```{r quick-compare2}
 colnames(all_trips)
@@ -115,59 +118,119 @@ colnames(all_trips)
 #dim(all_trips)
 #head(all_trips)
 #str(all_trips)
-summary(all_trips)
+summary(all_trips) #only one line needed
 ```
-## `r fa("broom", fill = "purple")` Clean and repair New dataFrame
-### Clean member/casual column for consistency
+
+## Clean 'member_casual' Column for Consistency
+
 ```{r fix-members}
 #table(all_trips$member_casual) #view table for memberships
 all_trips <- all_trips %>%
- mutate(member_casual = recode(member_casual
- ,"Subscriber" = "member"
- ,"Customer" = "casual"))
+  mutate(member_casual = recode(member_casual ,"Subscriber" = "member" ,"Customer" = "casual"))
 table(all_trips$member_casual) #verify table update contains 2 variables
 ```
-### Split Date into columns for better aggregation
+
+## Split Date into Columns for Better Aggregation
+
 ```{r splitthedate}
- all_trips$date <- as.Date(all_trips$started_at) #The default format is yyyy-mm-dd
- all_trips$month <- format(as.Date(all_trips$date), "%m")
- all_trips$day <- format(as.Date(all_trips$date), "%d")
- all_trips$year <- format(as.Date(all_trips$date), "%Y")
- all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
+all_trips$date <- as.Date(all_trips$started_at) #The default format is yyyy-mm-dd
+all_trips$month <- format(as.Date(all_trips$date), "%m")
+all_trips$day <- format(as.Date(all_trips$date), "%d")
+all_trips$year <- format(as.Date(all_trips$date), "%Y")
+all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
 ```
-### Add ride_length calculation and make numeric
+
+## Add 'ride_length' Calculation and Make Numeric
+
 ```{r calc-ridelength}
 all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
-# convert ride_length from factor to numeric
 #is.factor(all_trips$ride_length)
 all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
 is.numeric(all_trips$ride_length) #verify numeric
 ```
-### Remove the rows of bad data
+
+## Remove the Rows of Bad Data
+
 data frame include a few hundred entries when bikes were removed for service
+
 ```{r remove-service}
 all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
 ```
-## `r fa("magnifying-glass-chart", fill = "purple")` Prepare descriptive analysis
-### Analyze ride lengths
+
+# `r fa("magnifying-glass-chart", fill = "#296473")` Prepare Descriptive Analysis
+
+## Analyze Ride Lengths
+
 ```{r ridelengths}
 #calculate all ride lengths
-mean(all_trips_v2$ride_length) #average (total ride length / rides)
-median(all_trips_v2$ride_length) #midpoint ride length
-max(all_trips_v2$ride_length) #longest ride
-min(all_trips_v2$ride_length) #shortest ride
+#mean(all_trips_v2$ride_length) #average (total ride length / rides)
+#median(all_trips_v2$ride_length) #midpoint ride length
+#max(all_trips_v2$ride_length) #longest ride
+#min(all_trips_v2$ride_length) #shortest ride
 # or more simply on one line
 summary(all_trips_v2$ride_length)
 ```
-### compare casual and members
+
+## Compare Casual and Members
+
 ```{r}
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = mean)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = median)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = max)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = min)
-#correct days of week order
-all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday", "Monday",
- "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+```
+
+## Correct Day of Week Order
+
+```{r}
+all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN =mean)
 ```
 
+# `r fa("chart-simple", fill = "#296473")` Analyze Ridership Data by Type and Weekday
+
+```{r}
+all_trips_v2 %>%
+  mutate(weekday = wday(started_at, label = TRUE)) %>% #creates weekday field using wday
+    group_by(member_casual, weekday) %>% #groups by usertype and weekday
+      summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
+        arrange(member_casual, weekday)
+```
+```{r}
+
+```
+
+## Visualize Number of Rides by Rider Type
+
+```{r}
+all_trips_v2 %>%
+  mutate(weekday = wday(started_at, label = TRUE)) %>%
+    group_by(member_casual, weekday) %>%
+      summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
+        arrange(member_casual, weekday) %>%
+          ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +
+          scale_y_continuous(labels=comma) +
+          geom_col(position = "dodge")
+```
+
+## Visualize Average Duration by Rider Type
+
+```{r}
+all_trips_v2 %>%
+  mutate(weekday = wday(started_at, label = TRUE)) %>%
+    group_by(member_casual, weekday) %>%
+      summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
+        arrange(member_casual, weekday) %>%
+          ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
+          geom_col(position = "dodge")
+```
+
+# `r fa("file-csv", fill = "#296473")` Export Summary File for Further Analysis
+
+```{r}
+counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual +
+                      all_trips_v2$day_of_week, FUN = mean,)
+write.csv(counts, file = 'output_CSV/avg_ride_length.csv')
+```
+
+# Insert Tableau Snapshot and URL to Public site for interactive dashboard 
