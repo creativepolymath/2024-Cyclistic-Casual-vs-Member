@@ -1,20 +1,24 @@
 ---
-title: "Cyclistic: Casual vs Member Ridership"
+title: 'Cyclistic: Casual vs Member Ridership'
 author: "Gregory Whitmore"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: 
-  html_notebook: 
+output:
+  html_document:
+    toc: true
+    toc_depth: '4'
+    df_print: paged
+  html_notebook:
     theme: journal
     toc: true
     toc_float: true
     smooth_scroll: true
     toc_depth: 4
     number_sections: true
-    css: "html/style.css"
+    css: html/style.css
     includes:
-      before_body: "html/header.html"
-      after_body: "html/footer.html"
-    self-contained: TRUE
+      before_body: html/header.html
+      after_body: html/footer.html
+    self-contained: true
 ---
 
 ------------------------------------------------------------------------
