@@ -1,5 +1,10 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
 *.csv
+Artwork/
+CSV
+Jupyter/
+Tableau/
+*.blend
