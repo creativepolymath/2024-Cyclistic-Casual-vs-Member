@@ -1,5 +1,5 @@
 ---
-title: 'Cyclistic: Casual vs Member Ridership'
+title: "Cyclistic: Casual vs Member Ridership"
 author: "Gregory Whitmore"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
@@ -20,8 +20,6 @@ output:
     toc_depth: '4'
     df_print: paged
 ---
-
-------------------------------------------------------------------------
 
 # `r fa("address-card", fill = "#296473")` About the Company
 <div class="info">
@@ -76,16 +74,12 @@ conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
 
-------------------------------------------------------------------------
-
 ## `r fa("file-csv", fill = "#296473")` Load Data from CSV
 
 ```{r dataload, echo=TRUE}
 q1_2019 <- read_csv("CSV/Divvy_Trips_2019_Q1.csv")
 q1_2020 <- read_csv("CSV/Divvy_Trips_2020_Q1.csv")
 ```
-
-------------------------------------------------------------------------
 
 # `r fa("broom", fill = "#296473")` Clean and Combine
 

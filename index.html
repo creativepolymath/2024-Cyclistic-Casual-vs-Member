@@ -2697,7 +2697,7 @@ display: none;
 </style>
 
 
-<style type="text/css">body {font-family: "News Cycle","Arial Narrow Bold",sans-serif;background-color: #e4eff2;}.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {z-index: 2;color: #000000;background-color: #ffffff;border-color: #000000;}.r {background-color: #c2cccf;}.r.hljs {color: #ffffff;}.hljs-comment {color: #9D7753 ;}.hljs-string {color: #9D7753 ;}a {color: #296473;}a:hover{color: #9D7753;}code {font-family: sans-serif;font: "Arial"";}ul {color: #333333;background-color: #f5f5f5;border: 1px solid #cccccc;border-radius: 4px;}</style>
+<style type="text/css">body {font-family: "News Cycle","Arial Narrow Bold",sans-serif;background-color: #e4eff2;}.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {z-index: 2;color: #000000;background-color: #ffffff;border-color: #000000;}.r {background-color: #c2cccf;}.r.hljs {color: #ffffff;}.hljs-comment {color: #9D7753 ;}.hljs-string {color: #9D7753 ;}a {color: #296473;}a:hover{color: #9D7753;}code {font-family: sans-serif;font: "Arial"";}</style>
 
 
 
@@ -2914,56 +2914,28 @@ left: 35%;
 
 <h1 class="title toc-ignore">Cyclistic: Casual vs Member Ridership</h1>
 <h4 class="author">Gregory Whitmore</h4>
-<h4 class="date">09 September, 2024</h4>
+<h4 class="date">03 September, 2024</h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
 <hr />
-<div id="about-the-company" class="section level1" number="1">
+<div id="environment-setup" class="section level1" number="1">
 <h1><span class="header-section-number">1</span>
-<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M512 80c8.8 0 16 7.2 16 16V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16H512zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM208 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128zm-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80H176zM376 144c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z" /></svg>
-About the Company</h1>
-<pre><code>In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geo-tracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and return to any other station in the system anytime. Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships.
-
-Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members. Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing flexibility helps Cyclistic attract more customers, Moreno believes that maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all new customers, Moreno believes there is a very good chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have chosen Cyclistic for their mobility needs.
-
-Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. To do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends.</code></pre>
-</div>
-<div id="define-the-problem" class="section level1" number="2">
-<h1><span class="header-section-number">2</span>
-<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm79 143c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" /></svg>
-Define the Problem</h1>
-<pre><code>The main problem for the director of marketing and marketing analytics team is this: Design marketing strategies aimed at converting Cyclistic’s casual riders into annual members. There are three questions that will guide this future marketing program. For the scope of this project, I will answer the following questions:
-
-  1) How do annual members and casual riders use Cyclistic bikes differently?
-  2) Why would casual riders buy Cyclistic annual memberships?
-  3) How can Cyclistic use digital media to influence casual riders to become members?
-
-By analyzing the data, we can identify broad patterns within the two groups. Understanding these differences will enable us to create more accurate customer profiles for each group. These insights will assist the marketing analytics team in designing high-quality, targeted marketing strategies to convert casual riders into members. For the Cyclistic executive team, these insights will help maximize the number of annual members and drive future growth for the company.</code></pre>
-</div>
-<div id="the-task" class="section level1" number="3">
-<h1><span class="header-section-number">3</span>
-<svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M32 32C32 14.3 46.3 0 64 0H320c17.7 0 32 14.3 32 32s-14.3 32-32 32H290.5l11.4 148.2c36.7 19.9 65.7 53.2 79.5 94.7l1 3c3.3 9.8 1.6 20.5-4.4 28.8s-15.7 13.3-26 13.3H32c-10.3 0-19.9-4.9-26-13.3s-7.7-19.1-4.4-28.8l1-3c13.8-41.5 42.8-74.8 79.5-94.7L93.5 64H64C46.3 64 32 49.7 32 32zM160 384h64v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384z" /></svg>
-The Task</h1>
-<pre><code>Analyze historical bike trip data to identify trends in how annual members and casual riders use Cyclistic bikes differently and create a data-driven digital media campaign to increase ridership.</code></pre>
-</div>
-<div id="environment-setup" class="section level1" number="4">
-<h1><span class="header-section-number">4</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z" /></svg>
 Environment Setup</h1>
-<pre><code>- readr for loading CSV files
-- scales for better graph scales
-- tidyverse for knitting file
-- conflicted to manage and set conflict repairs
-- ggplot for visuals
-- fontawesome for pretty notebook</code></pre>
+<pre><code>readr for loading CSV files
+scakes for better graph scales
+tidyverse for knitting file
+conflicted to manage and set conflict repairs
+ggplot for visuals
+fontawesome for final visual layout</code></pre>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <hr />
-<div id="load-data-from-csv" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span>
+<div id="load-data-from-csv" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V304H176c-35.3 0-64 28.7-64 64V512H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM200 352h16c22.1 0 40 17.9 40 40v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-4.4-3.6-8-8-8H200c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8h16c4.4 0 8-3.6 8-8v-8c0-8.8 7.2-16 16-16s16 7.2 16 16v8c0 22.1-17.9 40-40 40H200c-22.1 0-40-17.9-40-40V392c0-22.1 17.9-40 40-40zm133.1 0H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H333.1c-7.2 0-13.1 5.9-13.1 13.1c0 5.2 3 9.9 7.8 12l37.4 16.6c16.3 7.2 26.8 23.4 26.8 41.2c0 24.9-20.2 45.1-45.1 45.1H304c-8.8 0-16-7.2-16-16s7.2-16 16-16h42.9c7.2 0 13.1-5.9 13.1-13.1c0-5.2-3-9.9-7.8-12l-37.4-16.6c-16.3-7.2-26.8-23.4-26.8-41.2c0-24.9 20.2-45.1 45.1-45.1zm98.9 0c8.8 0 16 7.2 16 16v31.6c0 23 5.5 45.6 16 66c10.5-20.3 16-42.9 16-66V368c0-8.8 7.2-16 16-16s16 7.2 16 16v31.6c0 34.7-10.3 68.7-29.6 97.6l-5.1 7.7c-3 4.5-8 7.1-13.3 7.1s-10.3-2.7-13.3-7.1l-5.1-7.7c-19.3-28.9-29.6-62.9-29.6-97.6V368c0-8.8 7.2-16 16-16z" /></svg>
 Load Data from CSV</h2>
 <!-- rnb-text-end -->
@@ -2971,9 +2943,9 @@ Load Data from CSV</h2>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTFfMjAxOSA8LSByZWFkX2NzdihcIkNTVi9EaXZ2eV9Ucmlwc18yMDE5X1ExLmNzdlwiKVxuYGBgIn0= -->
 <pre class="r"><code>q1_2019 &lt;- read_csv(&quot;CSV/Divvy_Trips_2019_Q1.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzY1MDY5IENvbHVtbnM6IDEyXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg0KTogZnJvbV9zdGF0aW9uX25hbWUsIHRvX3N0YXRpb25fbmFtZSwgdXNlcnR5cGUsIGdlbmRlclxuZGJsICAoNSk6IHRyaXBfaWQsIGJpa2VpZCwgZnJvbV9zdGF0aW9uX2lkLCB0b19zdGF0aW9uX2lkLCBiaXJ0aHllYXJcbm51bSAgKDEpOiB0cmlwZHVyYXRpb25cbmR0dG0gKDIpOiBzdGFydF90aW1lLCBlbmRfdGltZVxuXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzY1MDY5IENvbHVtbnM6IDEyXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg0KTogZnJvbV9zdGF0aW9uX25hbWUsIHRvX3N0YXRpb25fbmFtZSwgdXNlcnR5cGUsIGdlbmRlclxuZGJsICAoNSk6IHRyaXBfaWQsIGJpa2VpZCwgZnJvbV9zdGF0aW9uX2lkLCB0b19zdGF0aW9uX2lkLCBiaXJ0aHllYXJcbm51bSAgKDEpOiB0cmlwZHVyYXRpb25cbmR0dG0gKDIpOiBzdGFydF90aW1lLCBlbmRfdGltZVxuXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
 <pre><code>Rows: 365069 Columns: 12
-── Column specification ───────────────────────────────────────────────────────────────────────────────────
+── Column specification ────────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr  (4): from_station_name, to_station_name, usertype, gender
 dbl  (5): trip_id, bikeid, from_station_id, to_station_id, birthyear
@@ -2986,9 +2958,9 @@ dttm (2): start_time, end_time
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucTFfMjAyMCA8LSByZWFkX2NzdihcIkNTVi9EaXZ2eV9Ucmlwc18yMDIwX1ExLmNzdlwiKVxuYGBgIn0= -->
 <pre class="r"><code>q1_2020 &lt;- read_csv(&quot;CSV/Divvy_Trips_2020_Q1.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNDI2ODg3IENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg1KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9uYW1lLCBtZW1iZXJfY2FzdWFsXG5kYmwgICg2KTogc3RhcnRfc3RhdGlvbl9pZCwgZW5kX3N0YXRpb25faWQsIHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNDI2ODg3IENvbHVtbnM6IDEzXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgICg1KTogcmlkZV9pZCwgcmlkZWFibGVfdHlwZSwgc3RhcnRfc3RhdGlvbl9uYW1lLCBlbmRfc3RhdGlvbl9uYW1lLCBtZW1iZXJfY2FzdWFsXG5kYmwgICg2KTogc3RhcnRfc3RhdGlvbl9pZCwgZW5kX3N0YXRpb25faWQsIHN0YXJ0X2xhdCwgc3RhcnRfbG5nLCBlbmRfbGF0LCBlbmRfbG5nXG5kdHRtICgyKTogc3RhcnRlZF9hdCwgZW5kZWRfYXRcblxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
 <pre><code>Rows: 426887 Columns: 13
-── Column specification ───────────────────────────────────────────────────────────────────────────────────
+── Column specification ────────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr  (5): ride_id, rideable_type, start_station_name, end_station_name, member_casual
 dbl  (6): start_station_id, end_station_id, start_lat, start_lng, end_lat, end_lng
@@ -3002,22 +2974,22 @@ dttm (2): started_at, ended_at
 <hr />
 </div>
 </div>
-<div id="clean-and-combine" class="section level1" number="5">
-<h1><span class="header-section-number">5</span>
+<div id="clean-and-combine" class="section level1" number="2">
+<h1><span class="header-section-number">2</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M566.6 54.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192-34.7-34.7c-4.2-4.2-10-6.6-16-6.6c-12.5 0-22.6 10.1-22.6 22.6v29.1L364.3 320h29.1c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16l-34.7-34.7 192-192zM341.1 353.4L222.6 234.9c-42.7-3.7-85.2 11.7-115.8 42.3l-8 8C76.5 307.5 64 337.7 64 369.2c0 6.8 7.1 11.2 13.2 8.2l51.1-25.5c5-2.5 9.5 4.1 5.4 7.9L7.3 473.4C2.7 477.6 0 483.6 0 489.9C0 502.1 9.9 512 22.1 512l173.3 0c38.8 0 75.9-15.4 103.4-42.8c30.6-30.6 45.9-73.1 42.3-115.8z" /></svg>
 Clean and Combine</h1>
-<div id="verify-column-names" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Verify Column
+<div id="verify-column-names" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Verify Column
 Names</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMocTFfMjAxOSlcbmBgYCJ9 -->
 <pre class="r"><code>colnames(q1_2019)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcInRyaXBfaWRcIiAgICAgICAgICAgXCJzdGFydF90aW1lXCIgICAgICAgIFwiZW5kX3RpbWVcIiAgICAgICAgICBcImJpa2VpZFwiICAgICAgICAgICAgXCJ0cmlwZHVyYXRpb25cIiAgICAgXG4gWzZdIFwiZnJvbV9zdGF0aW9uX2lkXCIgICBcImZyb21fc3RhdGlvbl9uYW1lXCIgXCJ0b19zdGF0aW9uX2lkXCIgICAgIFwidG9fc3RhdGlvbl9uYW1lXCIgICBcInVzZXJ0eXBlXCIgICAgICAgICBcblsxMV0gXCJnZW5kZXJcIiAgICAgICAgICAgIFwiYmlydGh5ZWFyXCIgICAgICAgIFxuIn0= -->
-<pre><code> [1] &quot;trip_id&quot;           &quot;start_time&quot;        &quot;end_time&quot;          &quot;bikeid&quot;            &quot;tripduration&quot;     
- [6] &quot;from_station_id&quot;   &quot;from_station_name&quot; &quot;to_station_id&quot;     &quot;to_station_name&quot;   &quot;usertype&quot;         
-[11] &quot;gender&quot;            &quot;birthyear&quot;        </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcInRyaXBfaWRcIiAgICAgICAgICAgXCJzdGFydF90aW1lXCIgICAgICAgIFwiZW5kX3RpbWVcIiAgICAgICAgICBcImJpa2VpZFwiICAgICAgICAgICBcbiBbNV0gXCJ0cmlwZHVyYXRpb25cIiAgICAgIFwiZnJvbV9zdGF0aW9uX2lkXCIgICBcImZyb21fc3RhdGlvbl9uYW1lXCIgXCJ0b19zdGF0aW9uX2lkXCIgICAgXG4gWzldIFwidG9fc3RhdGlvbl9uYW1lXCIgICBcInVzZXJ0eXBlXCIgICAgICAgICAgXCJnZW5kZXJcIiAgICAgICAgICAgIFwiYmlydGh5ZWFyXCIgICAgICAgIFxuIn0= -->
+<pre><code> [1] &quot;trip_id&quot;           &quot;start_time&quot;        &quot;end_time&quot;          &quot;bikeid&quot;           
+ [5] &quot;tripduration&quot;      &quot;from_station_id&quot;   &quot;from_station_name&quot; &quot;to_station_id&quot;    
+ [9] &quot;to_station_name&quot;   &quot;usertype&quot;          &quot;gender&quot;            &quot;birthyear&quot;        </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMocTFfMjAyMClcbmBgYCJ9 -->
 <pre class="r"><code>colnames(q1_2020)</code></pre>
@@ -3030,8 +3002,8 @@ Names</h2>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<div id="rename-columns-of-q1_2019.csv-for-consistency" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Rename Columns of
+<div id="rename-columns-of-q1_2019.csv-for-consistency" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Rename Columns of
 ‘q1_2019.csv’ for Consistency</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3059,8 +3031,8 @@ Names</h2>
 <!-- rnb-text-begin -->
 </div>
 </div>
-<div id="inspect-the-dataframes" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Inspect the
+<div id="inspect-the-dataframes" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Inspect the
 Dataframes</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3136,8 +3108,8 @@ Dataframes</h2>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<div id="convert-ride_id-and-rideable_type-columns-to-chr" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Convert ride_id and
+<div id="convert-ride_id-and-rideable_type-columns-to-chr" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Convert ride_id and
 rideable_type columns to CHR</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3145,8 +3117,6 @@ rideable_type columns to CHR</h3>
 <pre class="r"><code>q1_2019 &lt;- mutate(q1_2019, ride_id = as.character(ride_id), rideable_type = as.character(rideable_type))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKHExXzIwMTkpXG5gYGAifQ== -->
 <pre class="r"><code>str(q1_2019)</code></pre>
@@ -3171,12 +3141,12 @@ rideable_type columns to CHR</h3>
 </div>
 </div>
 </div>
-<div id="create-and-clean-new-table-all_trips" class="section level1" number="6">
-<h1><span class="header-section-number">6</span>
+<div id="create-and-clean-new-table-all_trips" class="section level1" number="3">
+<h1><span class="header-section-number">3</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M566.6 54.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192-34.7-34.7c-4.2-4.2-10-6.6-16-6.6c-12.5 0-22.6 10.1-22.6 22.6v29.1L364.3 320h29.1c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16l-34.7-34.7 192-192zM341.1 353.4L222.6 234.9c-42.7-3.7-85.2 11.7-115.8 42.3l-8 8C76.5 307.5 64 337.7 64 369.2c0 6.8 7.1 11.2 13.2 8.2l51.1-25.5c5-2.5 9.5 4.1 5.4 7.9L7.3 473.4C2.7 477.6 0 483.6 0 489.9C0 502.1 9.9 512 22.1 512l173.3 0c38.8 0 75.9-15.4 103.4-42.8c30.6-30.6 45.9-73.1 42.3-115.8z" /></svg>
 Create and Clean New Table ‘all_trips’</h1>
-<div id="stack-quarter-dataframes-into-one" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Stack Quarter
+<div id="stack-quarter-dataframes-into-one" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Stack Quarter
 Dataframes into One</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3186,8 +3156,8 @@ Dataframes into One</h2>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="remove-lat-long-birthyear-and-gender" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Remove lat, long,
+<div id="remove-lat-long-birthyear-and-gender" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Remove lat, long,
 birthyear, and gender</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3198,8 +3168,8 @@ birthyear, and gender</h2>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="load-all_trips-and-preview" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Load ‘all_trips’ and
+<div id="load-all_trips-and-preview" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Load ‘all_trips’ and
 Preview</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3218,29 +3188,37 @@ Preview</h2>
 #str(all_trips)
 summary(all_trips) #only one line needed</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgcmlkZV9pZCAgICAgICAgICAgIHN0YXJ0ZWRfYXQgICAgICAgICAgICAgICAgICAgICAgICBlbmRlZF9hdCAgICAgICAgICAgICAgICAgICAgICByaWRlYWJsZV90eXBlICAgICBcbiBMZW5ndGg6NzkxOTU2ICAgICAgTWluLiAgIDoyMDE5LTAxLTAxIDAwOjA0OjM3LjAwICAgTWluLiAgIDoyMDE5LTAxLTAxIDAwOjExOjA3LjAwICAgTGVuZ3RoOjc5MTk1NiAgICAgXG4gQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46MjAxOS0wMi0yOCAxNzowNDowNC43NSAgIDFzdCBRdS46MjAxOS0wMi0yOCAxNzoxNTo1OC43NSAgIENsYXNzIDpjaGFyYWN0ZXIgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBNZWRpYW4gOjIwMjAtMDEtMDcgMTI6NDg6NTAuNTAgICBNZWRpYW4gOjIwMjAtMDEtMDcgMTM6MDI6NTAuMDAgICBNb2RlICA6Y2hhcmFjdGVyICBcbiAgICAgICAgICAgICAgICAgICAgTWVhbiAgIDoyMDE5LTA5LTAxIDExOjU4OjA4LjM1ICAgTWVhbiAgIDoyMDE5LTA5LTAxIDEyOjE3OjUyLjE3ICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIDNyZCBRdS46MjAyMC0wMi0xOSAxOTozMTo1NC43NSAgIDNyZCBRdS46MjAyMC0wMi0xOSAxOTo1MTo1NC41MCAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICBNYXguICAgOjIwMjAtMDMtMzEgMjM6NTE6MzQuMDAgICBNYXguICAgOjIwMjAtMDUtMTkgMjA6MTA6MzQuMDAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gc3RhcnRfc3RhdGlvbl9pZCBzdGFydF9zdGF0aW9uX25hbWUgZW5kX3N0YXRpb25faWQgIGVuZF9zdGF0aW9uX25hbWUgICBtZW1iZXJfY2FzdWFsICAgICBcbiBNaW4uICAgOiAgMi4wICAgIExlbmd0aDo3OTE5NTYgICAgICBNaW4uICAgOiAgMi4wICAgTGVuZ3RoOjc5MTk1NiAgICAgIExlbmd0aDo3OTE5NTYgICAgIFxuIDFzdCBRdS46IDc3LjAgICAgQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46IDc3LjAgICBDbGFzcyA6Y2hhcmFjdGVyICAgQ2xhc3MgOmNoYXJhY3RlciAgXG4gTWVkaWFuIDoxNzQuMCAgICBNb2RlICA6Y2hhcmFjdGVyICAgTWVkaWFuIDoxNzQuMCAgIE1vZGUgIDpjaGFyYWN0ZXIgICBNb2RlICA6Y2hhcmFjdGVyICBcbiBNZWFuICAgOjIwNC40ICAgICAgICAgICAgICAgICAgICAgICBNZWFuICAgOjIwNC40ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIDNyZCBRdS46MjkxLjAgICAgICAgICAgICAgICAgICAgICAgIDNyZCBRdS46MjkxLjAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gTWF4LiAgIDo2NzUuMCAgICAgICAgICAgICAgICAgICAgICAgTWF4LiAgIDo2NzUuMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOQSdzICAgOjEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIn0= -->
-<pre><code>   ride_id            started_at                        ended_at                      rideable_type     
- Length:791956      Min.   :2019-01-01 00:04:37.00   Min.   :2019-01-01 00:11:07.00   Length:791956     
- Class :character   1st Qu.:2019-02-28 17:04:04.75   1st Qu.:2019-02-28 17:15:58.75   Class :character  
- Mode  :character   Median :2020-01-07 12:48:50.50   Median :2020-01-07 13:02:50.00   Mode  :character  
-                    Mean   :2019-09-01 11:58:08.35   Mean   :2019-09-01 12:17:52.17                     
-                    3rd Qu.:2020-02-19 19:31:54.75   3rd Qu.:2020-02-19 19:51:54.50                     
-                    Max.   :2020-03-31 23:51:34.00   Max.   :2020-05-19 20:10:34.00                     
-                                                                                                        
- start_station_id start_station_name end_station_id  end_station_name   member_casual     
- Min.   :  2.0    Length:791956      Min.   :  2.0   Length:791956      Length:791956     
- 1st Qu.: 77.0    Class :character   1st Qu.: 77.0   Class :character   Class :character  
- Median :174.0    Mode  :character   Median :174.0   Mode  :character   Mode  :character  
- Mean   :204.4                       Mean   :204.4                                        
- 3rd Qu.:291.0                       3rd Qu.:291.0                                        
- Max.   :675.0                       Max.   :675.0                                        
-                                     NA&#39;s   :1                                            </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgcmlkZV9pZCAgICAgICAgICAgIHN0YXJ0ZWRfYXQgICAgICAgICAgICAgICAgICAgICAgICBlbmRlZF9hdCAgICAgICAgICAgICAgICAgICAgIFxuIExlbmd0aDo3OTE5NTYgICAgICBNaW4uICAgOjIwMTktMDEtMDEgMDA6MDQ6MzcuMDAgICBNaW4uICAgOjIwMTktMDEtMDEgMDA6MTE6MDcuMDAgIFxuIENsYXNzIDpjaGFyYWN0ZXIgICAxc3QgUXUuOjIwMTktMDItMjggMTc6MDQ6MDQuNzUgICAxc3QgUXUuOjIwMTktMDItMjggMTc6MTU6NTguNzUgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBNZWRpYW4gOjIwMjAtMDEtMDcgMTI6NDg6NTAuNTAgICBNZWRpYW4gOjIwMjAtMDEtMDcgMTM6MDI6NTAuMDAgIFxuICAgICAgICAgICAgICAgICAgICBNZWFuICAgOjIwMTktMDktMDEgMTE6NTg6MDguMzUgICBNZWFuICAgOjIwMTktMDktMDEgMTI6MTc6NTIuMTcgIFxuICAgICAgICAgICAgICAgICAgICAzcmQgUXUuOjIwMjAtMDItMTkgMTk6MzE6NTQuNzUgICAzcmQgUXUuOjIwMjAtMDItMTkgMTk6NTE6NTQuNTAgIFxuICAgICAgICAgICAgICAgICAgICBNYXguICAgOjIwMjAtMDMtMzEgMjM6NTE6MzQuMDAgICBNYXguICAgOjIwMjAtMDUtMTkgMjA6MTA6MzQuMDAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIHJpZGVhYmxlX3R5cGUgICAgICBzdGFydF9zdGF0aW9uX2lkIHN0YXJ0X3N0YXRpb25fbmFtZSBlbmRfc3RhdGlvbl9pZCAgZW5kX3N0YXRpb25fbmFtZSAgXG4gTGVuZ3RoOjc5MTk1NiAgICAgIE1pbi4gICA6ICAyLjAgICAgTGVuZ3RoOjc5MTk1NiAgICAgIE1pbi4gICA6ICAyLjAgICBMZW5ndGg6NzkxOTU2ICAgICBcbiBDbGFzcyA6Y2hhcmFjdGVyICAgMXN0IFF1LjogNzcuMCAgICBDbGFzcyA6Y2hhcmFjdGVyICAgMXN0IFF1LjogNzcuMCAgIENsYXNzIDpjaGFyYWN0ZXIgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBNZWRpYW4gOjE3NC4wICAgIE1vZGUgIDpjaGFyYWN0ZXIgICBNZWRpYW4gOjE3NC4wICAgTW9kZSAgOmNoYXJhY3RlciAgXG4gICAgICAgICAgICAgICAgICAgIE1lYW4gICA6MjA0LjQgICAgICAgICAgICAgICAgICAgICAgIE1lYW4gICA6MjA0LjQgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgM3JkIFF1LjoyOTEuMCAgICAgICAgICAgICAgICAgICAgICAgM3JkIFF1LjoyOTEuMCAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICBNYXguICAgOjY3NS4wICAgICAgICAgICAgICAgICAgICAgICBNYXguICAgOjY3NS4wICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BJ3MgICA6MSAgICAgICAgICAgICAgICAgICAgICAgICBcbiBtZW1iZXJfY2FzdWFsICAgICBcbiBMZW5ndGg6NzkxOTU2ICAgICBcbiBDbGFzcyA6Y2hhcmFjdGVyICBcbiBNb2RlICA6Y2hhcmFjdGVyICBcbiAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICBcbiJ9 -->
+<pre><code>   ride_id            started_at                        ended_at                     
+ Length:791956      Min.   :2019-01-01 00:04:37.00   Min.   :2019-01-01 00:11:07.00  
+ Class :character   1st Qu.:2019-02-28 17:04:04.75   1st Qu.:2019-02-28 17:15:58.75  
+ Mode  :character   Median :2020-01-07 12:48:50.50   Median :2020-01-07 13:02:50.00  
+                    Mean   :2019-09-01 11:58:08.35   Mean   :2019-09-01 12:17:52.17  
+                    3rd Qu.:2020-02-19 19:31:54.75   3rd Qu.:2020-02-19 19:51:54.50  
+                    Max.   :2020-03-31 23:51:34.00   Max.   :2020-05-19 20:10:34.00  
+                                                                                     
+ rideable_type      start_station_id start_station_name end_station_id  end_station_name  
+ Length:791956      Min.   :  2.0    Length:791956      Min.   :  2.0   Length:791956     
+ Class :character   1st Qu.: 77.0    Class :character   1st Qu.: 77.0   Class :character  
+ Mode  :character   Median :174.0    Mode  :character   Median :174.0   Mode  :character  
+                    Mean   :204.4                       Mean   :204.4                     
+                    3rd Qu.:291.0                       3rd Qu.:291.0                     
+                    Max.   :675.0                       Max.   :675.0                     
+                                                        NA&#39;s   :1                         
+ member_casual     
+ Length:791956     
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="clean-member_casual-column-for-consistency" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Clean ‘member_casual’
+<div id="clean-member_casual-column-for-consistency" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Clean ‘member_casual’
 Column for Consistency</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3258,8 +3236,8 @@ casual member
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="split-date-into-columns-for-better-aggregation" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Split Date into
+<div id="split-date-into-columns-for-better-aggregation" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Split Date into
 Columns for Better Aggregation</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3273,8 +3251,8 @@ all_trips$day_of_week &lt;- format(as.Date(all_trips$date), &quot;%A&quot;)</cod
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="add-ride_length-calculation-and-make-numeric" class="section level2" number="6.6">
-<h2><span class="header-section-number">6.6</span> Add ‘ride_length’
+<div id="add-ride_length-calculation-and-make-numeric" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Add ‘ride_length’
 Calculation and Make Numeric</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3290,8 +3268,8 @@ is.numeric(all_trips$ride_length) #verify numeric</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="remove-the-rows-of-bad-data" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> Remove the Rows of
+<div id="remove-the-rows-of-bad-data" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Remove the Rows of
 Bad Data</h2>
 <p>data frame include a few hundred entries when bikes were removed for
 service</p>
@@ -3304,12 +3282,12 @@ service</p>
 <!-- rnb-text-begin -->
 </div>
 </div>
-<div id="prepare-descriptive-analysis" class="section level1" number="7">
-<h1><span class="header-section-number">7</span>
+<div id="prepare-descriptive-analysis" class="section level1" number="4">
+<h1><span class="header-section-number">4</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-312 8v64c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80-96V280c0 13.3 10.7 24 24 24s24-10.7 24-24V120c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80 64v96c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24s-24 10.7-24 24z" /></svg>
 Prepare Descriptive Analysis</h1>
-<div id="analyze-ride-lengths" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Analyze Ride
+<div id="analyze-ride-lengths" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Analyze Ride
 Lengths</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3329,8 +3307,8 @@ summary(all_trips_v2$ride_length)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="compare-casual-and-members" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Compare Casual and
+<div id="compare-casual-and-members" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Compare Casual and
 Members</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3377,8 +3355,8 @@ Members</h2>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="correct-day-of-week-order" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Correct Day of Week
+<div id="correct-day-of-week-order" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Correct Day of Week
 Order</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3397,8 +3375,8 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$d
 <!-- rnb-text-begin -->
 </div>
 </div>
-<div id="analyze-ridership-data-by-type-and-weekday" class="section level1" number="8">
-<h1><span class="header-section-number">8</span>
+<div id="analyze-ridership-data-by-type-and-weekday" class="section level1" number="5">
+<h1><span class="header-section-number">5</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V80zM0 272c0-26.5 21.5-48 48-48H80c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V272zM368 96h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z" /></svg>
 Analyze Ridership Data by Type and Weekday</h1>
 <!-- rnb-text-end -->
@@ -3410,8 +3388,9 @@ Analyze Ridership Data by Type and Weekday</h1>
       summarise(number_of_rides = n(), average_duration = mean(ride_length)) %&gt;%
         arrange(member_casual, weekday)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ21lbWJlcl9jYXN1YWwnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
-<pre><code>`summarise()` has grouped output by &#39;member_casual&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ21lbWJlcl9jYXN1YWwnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2BcbmFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;member_casual&#39;. You can override using the `.groups`
+argument.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjE0LCJuY29sIjo0LCJzdW1tYXJ5Ijp7IkEgdGliYmxlIjpbIjE0IMOXIDQiXSwiR3JvdXBzIjpbIm1lbWJlcl9jYXN1YWwgWzJdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQnJWU1BXZ1VRUlIrZTd0N1IwNXpkeEpTaUtLVm5YZUZIcUkyVGlIUklvZGdvaGNJZUV4MjUzNlN2ZDFqYnZlaWhaQ0FoRXNUUlRpdExWSUlRa2dDc1JFMVJRcC9JbHBvbWhBRVVSUFRTR3kwdVhOMmQyYnh0ckJMTWJ2Zis5N3czbnpmZTFjdmpweU9qOFFCUUFaRmtVQldHUVQxMnZCQStpeUFFbUdCQkFyMHVQK2I3RklmQXdvN0tYWVNQQkhWY04zQnhuNUdWVklkSTNSZklwQjdQUzJ1VUlDSTU0U3YwYlVpeWs3cy83a3VrNklHYVJDanpoMktjVlllY2t3QmMxWUFoeDBpWUo3b0FWdDJCQnlnbGFBQ3RrT3RWTTNBZGRFcHdzbVlSWFZDZzJMUkl0WnNpNG1FTmp0YzZPVk5nUDROZ0tOM0FZNngwUi9aQlRpZUE4ZytBdGc5QWRMQ0RaQitmUU5wTXdQU3prbVFWajhEYlBkemt4Sm9lUzMzNDkyZlViUjA3K0RPbmZsVnRQaGgvVlhyTzZERnFVSis0ZjRsOUhMNjR5Z2RiS0ducjUrOWVQLzdKMXErdmphVW5aMUhjNlhwbFZPZnpxUFpwZHY1d1FkdlVQTkEwMzY4ZlFqTlhOaGFyNTQ3ZzJZT1AzblkvbklGTmI5dXZWM1oyMEJ6dFphWkhIL3VxNVk3WEtoUUg5ZXhqVE5GaXFzazVFc1B0U1l6SnVQclhISmtpbjA2bmM1ZTJFQnhLZVVOMVNkNy9iVW9kTzFmYkpLUUNSM2Y0bUhTZEx3N1ZyRkFLem9yNGRNcDNDQVVsMGhCZHlpMksyek9udTFkUFdOV3pjMndycEUrdmxweHZsNVNTS0ZFUTBUU01kMFg2Mm10N0pnVDZXd29MZGZNMGovbGdLdVgrT0FFVnZ3WHFjSlFzYU1LMGNxV1dCdGlsaXFtV0U3VndHTkVXQ0hycE1GaGdobnRXWmlwMFlwcGk4RXd0cDZ4TFR0d0w2NVpobUQ4Uld6L0JZNU1IdzkzQkFBQSJ9 -->
 <div data-pagedtable="false">
@@ -3421,13 +3400,11 @@ Analyze Ridership Data by Type and Weekday</h1>
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<div id="visualize-number-of-rides-by-rider-type" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Visualize Number of
+<div id="visualize-number-of-rides-by-rider-type" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Visualize Number of
 Rides by Rider Type</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3441,8 +3418,9 @@ Rides by Rider Type</h2>
           scale_y_continuous(labels=comma) +
           geom_col(position = &quot;dodge&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ21lbWJlcl9jYXN1YWwnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
-<pre><code>`summarise()` has grouped output by &#39;member_casual&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ21lbWJlcl9jYXN1YWwnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2BcbmFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;member_casual&#39;. You can override using the `.groups`
+argument.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-plot-begin eyJoZWlnaHQiOjQzMi42MzI5LCJ3aWR0aCI6NzAwLCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
 <p><img src="data:image/png;base64,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" /></p>
@@ -3450,8 +3428,8 @@ Rides by Rider Type</h2>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="visualize-average-duration-by-rider-type" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Visualize Average
+<div id="visualize-average-duration-by-rider-type" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Visualize Average
 Duration by Rider Type</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3464,8 +3442,9 @@ Duration by Rider Type</h2>
           ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
           geom_col(position = &quot;dodge&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ21lbWJlcl9jYXN1YWwnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
-<pre><code>`summarise()` has grouped output by &#39;member_casual&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ21lbWJlcl9jYXN1YWwnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2BcbmFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;member_casual&#39;. You can override using the `.groups`
+argument.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-plot-begin eyJoZWlnaHQiOjQzMi42MzI5LCJ3aWR0aCI6NzAwLCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
 <p><img src="data:image/png;base64,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" /></p>
@@ -3474,8 +3453,8 @@ Duration by Rider Type</h2>
 <!-- rnb-text-begin -->
 </div>
 </div>
-<div id="export-summary-file-for-further-analysis" class="section level1" number="9">
-<h1><span class="header-section-number">9</span>
+<div id="export-summary-file-for-further-analysis" class="section level1" number="6">
+<h1><span class="header-section-number">6</span>
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#296473;overflow:visible;position:relative;"><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V304H176c-35.3 0-64 28.7-64 64V512H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM200 352h16c22.1 0 40 17.9 40 40v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-4.4-3.6-8-8-8H200c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8h16c4.4 0 8-3.6 8-8v-8c0-8.8 7.2-16 16-16s16 7.2 16 16v8c0 22.1-17.9 40-40 40H200c-22.1 0-40-17.9-40-40V392c0-22.1 17.9-40 40-40zm133.1 0H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H333.1c-7.2 0-13.1 5.9-13.1 13.1c0 5.2 3 9.9 7.8 12l37.4 16.6c16.3 7.2 26.8 23.4 26.8 41.2c0 24.9-20.2 45.1-45.1 45.1H304c-8.8 0-16-7.2-16-16s7.2-16 16-16h42.9c7.2 0 13.1-5.9 13.1-13.1c0-5.2-3-9.9-7.8-12l-37.4-16.6c-16.3-7.2-26.8-23.4-26.8-41.2c0-24.9 20.2-45.1 45.1-45.1zm98.9 0c8.8 0 16 7.2 16 16v31.6c0 23 5.5 45.6 16 66c10.5-20.3 16-42.9 16-66V368c0-8.8 7.2-16 16-16s16 7.2 16 16v31.6c0 34.7-10.3 68.7-29.6 97.6l-5.1 7.7c-3 4.5-8 7.1-13.3 7.1s-10.3-2.7-13.3-7.1l-5.1-7.7c-19.3-28.9-29.6-62.9-29.6-97.6V368c0-8.8 7.2-16 16-16z" /></svg>
 Export Summary File for Further Analysis</h1>
 <!-- rnb-text-end -->
@@ -3486,9 +3465,15 @@ Export Summary File for Further Analysis</h1>
 write.csv(counts, file = &#39;output_CSV/avg_ride_length.csv&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="insert-tableau-snapshot-and-url-to-public-site-for-interactive-dashboard" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Insert Tableau Snapshot
+and URL to Public site for interactive dashboard</h1>
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogJ0N5Y2xpc3RpYzogQ2FzdWFsIHZzIE1lbWJlciBSaWRlcnNoaXAnDQphdXRob3I6ICJHcmVnb3J5IFdoaXRtb3JlIg0KZGF0ZTogImByIGZvcm1hdChTeXMudGltZSgpLCAnJWQgJUIsICVZJylgIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIHRvYzogdHJ1ZQ0KICAgIHRvY19kZXB0aDogJzQnDQogICAgZGZfcHJpbnQ6IHBhZ2VkDQogIGh0bWxfbm90ZWJvb2s6DQogICAgdGhlbWU6IGpvdXJuYWwNCiAgICB0b2M6IHRydWUNCiAgICB0b2NfZmxvYXQ6IHRydWUNCiAgICBzbW9vdGhfc2Nyb2xsOiB0cnVlDQogICAgdG9jX2RlcHRoOiA0DQogICAgbnVtYmVyX3NlY3Rpb25zOiB0cnVlDQogICAgY3NzOiBodG1sL3N0eWxlLmNzcw0KICAgIGluY2x1ZGVzOg0KICAgICAgYmVmb3JlX2JvZHk6IGh0bWwvaGVhZGVyLmh0bWwNCiAgICAgIGFmdGVyX2JvZHk6IGh0bWwvZm9vdGVyLmh0bWwNCiAgICBzZWxmLWNvbnRhaW5lZDogdHJ1ZQ0KLS0tDQoNCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KDQojIGByIGZhKCJhZGRyZXNzLWNhcmQiLCBmaWxsID0gIiMyOTY0NzMiKWAgQWJvdXQgdGhlIENvbXBhbnkNCg0KYGBgICAgICAgICAgDQpJbiAyMDE2LCBDeWNsaXN0aWMgbGF1bmNoZWQgYSBzdWNjZXNzZnVsIGJpa2Utc2hhcmUgb2ZmZXJpbmcuIFNpbmNlIHRoZW4sIHRoZSBwcm9ncmFtIGhhcyBncm93biB0byBhIGZsZWV0IG9mIDUsODI0IGJpY3ljbGVzIHRoYXQgYXJlIGdlby10cmFja2VkIGFuZCBsb2NrZWQgaW50byBhIG5ldHdvcmsgb2YgNjkyIHN0YXRpb25zIGFjcm9zcyBDaGljYWdvLiBUaGUgYmlrZXMgY2FuIGJlIHVubG9ja2VkIGZyb20gb25lIHN0YXRpb24gYW5kIHJldHVybiB0byBhbnkgb3RoZXIgc3RhdGlvbiBpbiB0aGUgc3lzdGVtIGFueXRpbWUuIFVudGlsIG5vdywgQ3ljbGlzdGlj4oCZcyBtYXJrZXRpbmcgc3RyYXRlZ3kgcmVsaWVkIG9uIGJ1aWxkaW5nIGdlbmVyYWwgYXdhcmVuZXNzIGFuZCBhcHBlYWxpbmcgdG8gYnJvYWQgY29uc3VtZXIgc2VnbWVudHMuIE9uZSBhcHByb2FjaCB0aGF0IGhlbHBlZCBtYWtlIHRoZXNlIHRoaW5ncyBwb3NzaWJsZSB3YXMgdGhlIGZsZXhpYmlsaXR5IG9mIGl0cyBwcmljaW5nIHBsYW5zOiBzaW5nbGUtcmlkZSBwYXNzZXMsIGZ1bGwtZGF5IHBhc3NlcywgYW5kIGFubnVhbCBtZW1iZXJzaGlwcy4NCg0KQ3VzdG9tZXJzIHdobyBwdXJjaGFzZSBzaW5nbGUtcmlkZSBvciBmdWxsLWRheSBwYXNzZXMgYXJlIHJlZmVycmVkIHRvIGFzIGNhc3VhbCByaWRlcnMuIEN1c3RvbWVycyB3aG8gcHVyY2hhc2UgYW5udWFsIG1lbWJlcnNoaXBzIGFyZSBDeWNsaXN0aWMgbWVtYmVycy4gQ3ljbGlzdGlj4oCZcyBmaW5hbmNlIGFuYWx5c3RzIGhhdmUgY29uY2x1ZGVkIHRoYXQgYW5udWFsIG1lbWJlcnMgYXJlIG11Y2ggbW9yZSBwcm9maXRhYmxlIHRoYW4gY2FzdWFsIHJpZGVycy4gQWx0aG91Z2ggdGhlIHByaWNpbmcgZmxleGliaWxpdHkgaGVscHMgQ3ljbGlzdGljIGF0dHJhY3QgbW9yZSBjdXN0b21lcnMsIE1vcmVubyBiZWxpZXZlcyB0aGF0IG1heGltaXppbmcgdGhlIG51bWJlciBvZiBhbm51YWwgbWVtYmVycyB3aWxsIGJlIGtleSB0byBmdXR1cmUgZ3Jvd3RoLiBSYXRoZXIgdGhhbiBjcmVhdGluZyBhIG1hcmtldGluZyBjYW1wYWlnbiB0aGF0IHRhcmdldHMgYWxsIG5ldyBjdXN0b21lcnMsIE1vcmVubyBiZWxpZXZlcyB0aGVyZSBpcyBhIHZlcnkgZ29vZCBjaGFuY2UgdG8gY29udmVydCBjYXN1YWwgcmlkZXJzIGludG8gbWVtYmVycy4gU2hlIG5vdGVzIHRoYXQgY2FzdWFsIHJpZGVycyBhcmUgYWxyZWFkeSBhd2FyZSBvZiB0aGUgQ3ljbGlzdGljIHByb2dyYW0gYW5kIGhhdmUgY2hvc2VuIEN5Y2xpc3RpYyBmb3IgdGhlaXIgbW9iaWxpdHkgbmVlZHMuDQoNCk1vcmVubyBoYXMgc2V0IGEgY2xlYXIgZ29hbDogRGVzaWduIG1hcmtldGluZyBzdHJhdGVnaWVzIGFpbWVkIGF0IGNvbnZlcnRpbmcgY2FzdWFsIHJpZGVycyBpbnRvIGFubnVhbCBtZW1iZXJzLiBUbyBkbyB0aGF0LCBob3dldmVyLCB0aGUgbWFya2V0aW5nIGFuYWx5c3QgdGVhbSBuZWVkcyB0byBiZXR0ZXIgdW5kZXJzdGFuZCBob3cgYW5udWFsIG1lbWJlcnMgYW5kIGNhc3VhbCByaWRlcnMgZGlmZmVyLCB3aHkgY2FzdWFsIHJpZGVycyB3b3VsZCBidXkgYSBtZW1iZXJzaGlwLCBhbmQgaG93IGRpZ2l0YWwgbWVkaWEgY291bGQgYWZmZWN0IHRoZWlyIG1hcmtldGluZyB0YWN0aWNzLiBNb3Jlbm8gYW5kIGhlciB0ZWFtIGFyZSBpbnRlcmVzdGVkIGluIGFuYWx5emluZyB0aGUgQ3ljbGlzdGljIGhpc3RvcmljYWwgYmlrZSB0cmlwIGRhdGEgdG8gaWRlbnRpZnkgdHJlbmRzLg0KYGBgDQoNCiMgYHIgZmEoInNxdWFyZS14bWFyayIsIGZpbGwgPSAiIzI5NjQ3MyIpYCBEZWZpbmUgdGhlIFByb2JsZW0NCg0KYGBgICAgICAgICAgDQpUaGUgbWFpbiBwcm9ibGVtIGZvciB0aGUgZGlyZWN0b3Igb2YgbWFya2V0aW5nIGFuZCBtYXJrZXRpbmcgYW5hbHl0aWNzIHRlYW0gaXMgdGhpczogRGVzaWduIG1hcmtldGluZyBzdHJhdGVnaWVzIGFpbWVkIGF0IGNvbnZlcnRpbmcgQ3ljbGlzdGlj4oCZcyBjYXN1YWwgcmlkZXJzIGludG8gYW5udWFsIG1lbWJlcnMuIFRoZXJlIGFyZSB0aHJlZSBxdWVzdGlvbnMgdGhhdCB3aWxsIGd1aWRlIHRoaXMgZnV0dXJlIG1hcmtldGluZyBwcm9ncmFtLiBGb3IgdGhlIHNjb3BlIG9mIHRoaXMgcHJvamVjdCwgSSB3aWxsIGFuc3dlciB0aGUgZm9sbG93aW5nIHF1ZXN0aW9uczoNCg0KICAxKSBIb3cgZG8gYW5udWFsIG1lbWJlcnMgYW5kIGNhc3VhbCByaWRlcnMgdXNlIEN5Y2xpc3RpYyBiaWtlcyBkaWZmZXJlbnRseT8NCiAgMikgV2h5IHdvdWxkIGNhc3VhbCByaWRlcnMgYnV5IEN5Y2xpc3RpYyBhbm51YWwgbWVtYmVyc2hpcHM/DQogIDMpIEhvdyBjYW4gQ3ljbGlzdGljIHVzZSBkaWdpdGFsIG1lZGlhIHRvIGluZmx1ZW5jZSBjYXN1YWwgcmlkZXJzIHRvIGJlY29tZSBtZW1iZXJzPw0KDQpCeSBhbmFseXppbmcgdGhlIGRhdGEsIHdlIGNhbiBpZGVudGlmeSBicm9hZCBwYXR0ZXJucyB3aXRoaW4gdGhlIHR3byBncm91cHMuIFVuZGVyc3RhbmRpbmcgdGhlc2UgZGlmZmVyZW5jZXMgd2lsbCBlbmFibGUgdXMgdG8gY3JlYXRlIG1vcmUgYWNjdXJhdGUgY3VzdG9tZXIgcHJvZmlsZXMgZm9yIGVhY2ggZ3JvdXAuIFRoZXNlIGluc2lnaHRzIHdpbGwgYXNzaXN0IHRoZSBtYXJrZXRpbmcgYW5hbHl0aWNzIHRlYW0gaW4gZGVzaWduaW5nIGhpZ2gtcXVhbGl0eSwgdGFyZ2V0ZWQgbWFya2V0aW5nIHN0cmF0ZWdpZXMgdG8gY29udmVydCBjYXN1YWwgcmlkZXJzIGludG8gbWVtYmVycy4gRm9yIHRoZSBDeWNsaXN0aWMgZXhlY3V0aXZlIHRlYW0sIHRoZXNlIGluc2lnaHRzIHdpbGwgaGVscCBtYXhpbWl6ZSB0aGUgbnVtYmVyIG9mIGFubnVhbCBtZW1iZXJzIGFuZCBkcml2ZSBmdXR1cmUgZ3Jvd3RoIGZvciB0aGUgY29tcGFueS4NCmBgYA0KDQojIGByIGZhKCJ0aHVtYnRhY2siLCBmaWxsID0gIiMyOTY0NzMiKWAgVGhlIFRhc2sNCg0KYGBgDQpBbmFseXplIGhpc3RvcmljYWwgYmlrZSB0cmlwIGRhdGEgdG8gaWRlbnRpZnkgdHJlbmRzIGluIGhvdyBhbm51YWwgbWVtYmVycyBhbmQgY2FzdWFsIHJpZGVycyB1c2UgQ3ljbGlzdGljIGJpa2VzIGRpZmZlcmVudGx5IGFuZCBjcmVhdGUgYSBkYXRhLWRyaXZlbiBkaWdpdGFsIG1lZGlhIGNhbXBhaWduIHRvIGluY3JlYXNlIHJpZGVyc2hpcC4NCmBgYA0KDQojIGByIGZhKCJyLXByb2plY3QiLCBmaWxsID0gIiMyOTY0NzMiKWAgRW52aXJvbm1lbnQgU2V0dXANCg0KYGBgDQotIHJlYWRyIGZvciBsb2FkaW5nIENTViBmaWxlcw0KLSBzY2FsZXMgZm9yIGJldHRlciBncmFwaCBzY2FsZXMNCi0gdGlkeXZlcnNlIGZvciBrbml0dGluZyBmaWxlDQotIGNvbmZsaWN0ZWQgdG8gbWFuYWdlIGFuZCBzZXQgY29uZmxpY3QgcmVwYWlycw0KLSBnZ3Bsb3QgZm9yIHZpc3VhbHMNCi0gZm9udGF3ZXNvbWUgZm9yIHByZXR0eSBub3RlYm9vaw0KYGBgDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQ0KI2luc3RhbGwucGFja2FnZXMoInJlYWRyIikNCiNpbnN0YWxsLnBhY2thZ2VzKCJzY2FsZXMiKQ0KI2luc3RhbGwucGFja2FnZXMoInRpZHl2ZXJzZSIpDQojaW5zdGFsbC5wYWNrYWdlcygiY29uZmxpY3RlZCIpDQojaW5zdGFsbC5wYWNrYWdlcygiZ2dwbG90MiIpDQojaW5zdGFsbC5wYWNrYWdlcygiZm9udGF3ZXNvbWUiKQ0KbGlicmFyeShyZWFkcikgIyBsb2FkIGNzdiBmaWxlcw0KbGlicmFyeShzY2FsZXMpICMgYmV0dGVyIGNvbnRyb2wgb2YgZ3JhcGggc2NhbGVzDQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkoY29uZmxpY3RlZCkgIyBuZWVkZWQ/DQpsaWJyYXJ5KGdncGxvdDIpICMgDQojbGlicmFyeShnZ3NjaSkNCiNsaWJyYXJ5KGZsZXhkYXNoYm9hcmQpDQpsaWJyYXJ5KGZvbnRhd2Vzb21lKSAjIGF3ZXNvbWUgaWNvbnMgaW4gVE9DDQpjb25mbGljdF9wcmVmZXIoImZpbHRlciIsICJkcGx5ciIpDQpjb25mbGljdF9wcmVmZXIoImxhZyIsICJkcGx5ciIpDQpgYGANCg0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQoNCiMjIGByIGZhKCJmaWxlLWNzdiIsIGZpbGwgPSAiIzI5NjQ3MyIpYCBMb2FkIERhdGEgZnJvbSBDU1YNCg0KYGBge3IgZGF0YWxvYWQsIGVjaG89VFJVRX0NCnExXzIwMTkgPC0gcmVhZF9jc3YoIkNTVi9EaXZ2eV9Ucmlwc18yMDE5X1ExLmNzdiIpDQpxMV8yMDIwIDwtIHJlYWRfY3N2KCJDU1YvRGl2dnlfVHJpcHNfMjAyMF9RMS5jc3YiKQ0KYGBgDQoNCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KDQojIGByIGZhKCJicm9vbSIsIGZpbGwgPSAiIzI5NjQ3MyIpYCBDbGVhbiBhbmQgQ29tYmluZQ0KDQojIyBWZXJpZnkgQ29sdW1uIE5hbWVzDQoNCmBgYHtyIHF1aWNrLWNvbXBhcmV9DQpjb2xuYW1lcyhxMV8yMDE5KQ0KY29sbmFtZXMocTFfMjAyMCkNCmBgYA0KDQojIyMgUmVuYW1lIENvbHVtbnMgb2YgJ3ExXzIwMTkuY3N2JyBmb3IgQ29uc2lzdGVuY3kNCg0KYGBge3IgY29sdW1uLXJlbmFtZX0NCihxMV8yMDE5IDwtIHJlbmFtZShxMV8yMDE5DQogLHJpZGVfaWQgPSB0cmlwX2lkDQogLHJpZGVhYmxlX3R5cGUgPSBiaWtlaWQNCiAsc3RhcnRlZF9hdCA9IHN0YXJ0X3RpbWUNCiAsZW5kZWRfYXQgPSBlbmRfdGltZQ0KICxzdGFydF9zdGF0aW9uX25hbWUgPSBmcm9tX3N0YXRpb25fbmFtZQ0KICxzdGFydF9zdGF0aW9uX2lkID0gZnJvbV9zdGF0aW9uX2lkDQogLGVuZF9zdGF0aW9uX25hbWUgPSB0b19zdGF0aW9uX25hbWUNCiAsZW5kX3N0YXRpb25faWQgPSB0b19zdGF0aW9uX2lkDQogLG1lbWJlcl9jYXN1YWwgPSB1c2VydHlwZQ0KICkpDQpgYGANCg0KIyMgSW5zcGVjdCB0aGUgRGF0YWZyYW1lcw0KDQpgYGB7ciBpbnNwZWN0aW9uLXF1YXJ0ZXJzfQ0Kc3RyKHExXzIwMTkpDQpzdHIocTFfMjAyMCkNCmBgYA0KDQojIyMgQ29udmVydCByaWRlX2lkIGFuZCByaWRlYWJsZV90eXBlIGNvbHVtbnMgdG8gQ0hSDQoNCmBgYHtyIGNoYXJhY3Rlci1jb252fQ0KcTFfMjAxOSA8LSBtdXRhdGUocTFfMjAxOSwgcmlkZV9pZCA9IGFzLmNoYXJhY3RlcihyaWRlX2lkKSwgcmlkZWFibGVfdHlwZSA9IGFzLmNoYXJhY3RlcihyaWRlYWJsZV90eXBlKSkNCmBgYA0KDQpgYGB7cn0NCnN0cihxMV8yMDE5KQ0KYGBgDQoNCiMgYHIgZmEoImJyb29tIiwgZmlsbCA9ICIjMjk2NDczIilgIENyZWF0ZSBhbmQgQ2xlYW4gTmV3IFRhYmxlICdhbGxfdHJpcHMnDQoNCiMjIFN0YWNrIFF1YXJ0ZXIgRGF0YWZyYW1lcyBpbnRvIE9uZQ0KDQpgYGB7ciBzdGFja2VtdXB9DQphbGxfdHJpcHMgPC0gYmluZF9yb3dzKHExXzIwMTksIHExXzIwMjApDQpgYGANCg0KIyMgUmVtb3ZlIGxhdCwgbG9uZywgYmlydGh5ZWFyLCBhbmQgZ2VuZGVyDQoNCmBgYHtyIHJlbW92YWwtdW5uZWN9DQphbGxfdHJpcHMgPC0gYWxsX3RyaXBzICU+JQ0KICBzZWxlY3QoLWMoc3RhcnRfbGF0LCBzdGFydF9sbmcsIGVuZF9sYXQsIGVuZF9sbmcsIGJpcnRoeWVhciwgZ2VuZGVyLCB0cmlwZHVyYXRpb24pKQ0KYGBgDQoNCiMjIExvYWQgJ2FsbF90cmlwcycgYW5kIFByZXZpZXcNCg0KYGBge3IgcXVpY2stY29tcGFyZTJ9DQpjb2xuYW1lcyhhbGxfdHJpcHMpDQojbnJvdyhhbGxfdHJpcHMpDQojZGltKGFsbF90cmlwcykNCiNoZWFkKGFsbF90cmlwcykNCiNzdHIoYWxsX3RyaXBzKQ0Kc3VtbWFyeShhbGxfdHJpcHMpICNvbmx5IG9uZSBsaW5lIG5lZWRlZA0KYGBgDQoNCiMjIENsZWFuICdtZW1iZXJfY2FzdWFsJyBDb2x1bW4gZm9yIENvbnNpc3RlbmN5DQoNCmBgYHtyIGZpeC1tZW1iZXJzfQ0KI3RhYmxlKGFsbF90cmlwcyRtZW1iZXJfY2FzdWFsKSAjdmlldyB0YWJsZSBmb3IgbWVtYmVyc2hpcHMNCmFsbF90cmlwcyA8LSBhbGxfdHJpcHMgJT4lDQogIG11dGF0ZShtZW1iZXJfY2FzdWFsID0gcmVjb2RlKG1lbWJlcl9jYXN1YWwgLCJTdWJzY3JpYmVyIiA9ICJtZW1iZXIiICwiQ3VzdG9tZXIiID0gImNhc3VhbCIpKQ0KdGFibGUoYWxsX3RyaXBzJG1lbWJlcl9jYXN1YWwpICN2ZXJpZnkgdGFibGUgdXBkYXRlIGNvbnRhaW5zIDIgdmFyaWFibGVzDQpgYGANCg0KIyMgU3BsaXQgRGF0ZSBpbnRvIENvbHVtbnMgZm9yIEJldHRlciBBZ2dyZWdhdGlvbg0KDQpgYGB7ciBzcGxpdHRoZWRhdGV9DQphbGxfdHJpcHMkZGF0ZSA8LSBhcy5EYXRlKGFsbF90cmlwcyRzdGFydGVkX2F0KSAjVGhlIGRlZmF1bHQgZm9ybWF0IGlzIHl5eXktbW0tZGQNCmFsbF90cmlwcyRtb250aCA8LSBmb3JtYXQoYXMuRGF0ZShhbGxfdHJpcHMkZGF0ZSksICIlbSIpDQphbGxfdHJpcHMkZGF5IDwtIGZvcm1hdChhcy5EYXRlKGFsbF90cmlwcyRkYXRlKSwgIiVkIikNCmFsbF90cmlwcyR5ZWFyIDwtIGZvcm1hdChhcy5EYXRlKGFsbF90cmlwcyRkYXRlKSwgIiVZIikNCmFsbF90cmlwcyRkYXlfb2Zfd2VlayA8LSBmb3JtYXQoYXMuRGF0ZShhbGxfdHJpcHMkZGF0ZSksICIlQSIpDQpgYGANCg0KIyMgQWRkICdyaWRlX2xlbmd0aCcgQ2FsY3VsYXRpb24gYW5kIE1ha2UgTnVtZXJpYw0KDQpgYGB7ciBjYWxjLXJpZGVsZW5ndGh9DQphbGxfdHJpcHMkcmlkZV9sZW5ndGggPC0gZGlmZnRpbWUoYWxsX3RyaXBzJGVuZGVkX2F0LGFsbF90cmlwcyRzdGFydGVkX2F0KQ0KI2lzLmZhY3RvcihhbGxfdHJpcHMkcmlkZV9sZW5ndGgpDQphbGxfdHJpcHMkcmlkZV9sZW5ndGggPC0gYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoYWxsX3RyaXBzJHJpZGVfbGVuZ3RoKSkNCmlzLm51bWVyaWMoYWxsX3RyaXBzJHJpZGVfbGVuZ3RoKSAjdmVyaWZ5IG51bWVyaWMNCmBgYA0KDQojIyBSZW1vdmUgdGhlIFJvd3Mgb2YgQmFkIERhdGENCg0KZGF0YSBmcmFtZSBpbmNsdWRlIGEgZmV3IGh1bmRyZWQgZW50cmllcyB3aGVuIGJpa2VzIHdlcmUgcmVtb3ZlZCBmb3Igc2VydmljZQ0KDQpgYGB7ciByZW1vdmUtc2VydmljZX0NCmFsbF90cmlwc192MiA8LSBhbGxfdHJpcHNbIShhbGxfdHJpcHMkc3RhcnRfc3RhdGlvbl9uYW1lID09ICJIUSBRUiIgfCBhbGxfdHJpcHMkcmlkZV9sZW5ndGg8MCksXQ0KYGBgDQoNCiMgYHIgZmEoIm1hZ25pZnlpbmctZ2xhc3MtY2hhcnQiLCBmaWxsID0gIiMyOTY0NzMiKWAgUHJlcGFyZSBEZXNjcmlwdGl2ZSBBbmFseXNpcw0KDQojIyBBbmFseXplIFJpZGUgTGVuZ3Rocw0KDQpgYGB7ciByaWRlbGVuZ3Roc30NCiNjYWxjdWxhdGUgYWxsIHJpZGUgbGVuZ3Rocw0KI21lYW4oYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKSAjYXZlcmFnZSAodG90YWwgcmlkZSBsZW5ndGggLyByaWRlcykNCiNtZWRpYW4oYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKSAjbWlkcG9pbnQgcmlkZSBsZW5ndGgNCiNtYXgoYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKSAjbG9uZ2VzdCByaWRlDQojbWluKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCkgI3Nob3J0ZXN0IHJpZGUNCiMgb3IgbW9yZSBzaW1wbHkgb24gb25lIGxpbmUNCnN1bW1hcnkoYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKQ0KYGBgDQoNCiMjIENvbXBhcmUgQ2FzdWFsIGFuZCBNZW1iZXJzDQoNCmBgYHtyfQ0KYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsLCBGVU4gPSBtZWFuKQ0KYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsLCBGVU4gPSBtZWRpYW4pDQphZ2dyZWdhdGUoYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoIH4gYWxsX3RyaXBzX3YyJG1lbWJlcl9jYXN1YWwsIEZVTiA9IG1heCkNCmFnZ3JlZ2F0ZShhbGxfdHJpcHNfdjIkcmlkZV9sZW5ndGggfiBhbGxfdHJpcHNfdjIkbWVtYmVyX2Nhc3VhbCwgRlVOID0gbWluKQ0KYGBgDQoNCiMjIENvcnJlY3QgRGF5IG9mIFdlZWsgT3JkZXINCg0KYGBge3J9DQphbGxfdHJpcHNfdjIkZGF5X29mX3dlZWsgPC0gb3JkZXJlZChhbGxfdHJpcHNfdjIkZGF5X29mX3dlZWssIGxldmVscz1jKCJTdW5kYXkiLCAiTW9uZGF5IiwgIlR1ZXNkYXkiLCAiV2VkbmVzZGF5IiwgIlRodXJzZGF5IiwgIkZyaWRheSIsICJTYXR1cmRheSIpKQ0KYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsICsgYWxsX3RyaXBzX3YyJGRheV9vZl93ZWVrLCBGVU4gPW1lYW4pDQpgYGANCg0KIyBgciBmYSgiY2hhcnQtc2ltcGxlIiwgZmlsbCA9ICIjMjk2NDczIilgIEFuYWx5emUgUmlkZXJzaGlwIERhdGEgYnkgVHlwZSBhbmQgV2Vla2RheQ0KDQpgYGB7cn0NCmFsbF90cmlwc192MiAlPiUNCiAgbXV0YXRlKHdlZWtkYXkgPSB3ZGF5KHN0YXJ0ZWRfYXQsIGxhYmVsID0gVFJVRSkpICU+JSAjY3JlYXRlcyB3ZWVrZGF5IGZpZWxkIHVzaW5nIHdkYXkNCiAgICBncm91cF9ieShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KSAlPiUgI2dyb3VwcyBieSB1c2VydHlwZSBhbmQgd2Vla2RheQ0KICAgICAgc3VtbWFyaXNlKG51bWJlcl9vZl9yaWRlcyA9IG4oKSwgYXZlcmFnZV9kdXJhdGlvbiA9IG1lYW4ocmlkZV9sZW5ndGgpKSAlPiUNCiAgICAgICAgYXJyYW5nZShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KQ0KYGBgDQoNCmBgYHtyfQ0KDQpgYGANCg0KIyMgVmlzdWFsaXplIE51bWJlciBvZiBSaWRlcyBieSBSaWRlciBUeXBlDQoNCmBgYHtyfQ0KYWxsX3RyaXBzX3YyICU+JQ0KICBtdXRhdGUod2Vla2RheSA9IHdkYXkoc3RhcnRlZF9hdCwgbGFiZWwgPSBUUlVFKSkgJT4lDQogICAgZ3JvdXBfYnkobWVtYmVyX2Nhc3VhbCwgd2Vla2RheSkgJT4lDQogICAgICBzdW1tYXJpc2UobnVtYmVyX29mX3JpZGVzID0gbigpLCBhdmVyYWdlX2R1cmF0aW9uID0gbWVhbihyaWRlX2xlbmd0aCkpICU+JQ0KICAgICAgICBhcnJhbmdlKG1lbWJlcl9jYXN1YWwsIHdlZWtkYXkpICU+JQ0KICAgICAgICAgIGdncGxvdChhZXMoeCA9IHdlZWtkYXksIHkgPSBudW1iZXJfb2ZfcmlkZXMsIGZpbGwgPSBtZW1iZXJfY2FzdWFsKSkgKw0KICAgICAgICAgIHNjYWxlX3lfY29udGludW91cyhsYWJlbHM9Y29tbWEpICsNCiAgICAgICAgICBnZW9tX2NvbChwb3NpdGlvbiA9ICJkb2RnZSIpDQpgYGANCg0KIyMgVmlzdWFsaXplIEF2ZXJhZ2UgRHVyYXRpb24gYnkgUmlkZXIgVHlwZQ0KDQpgYGB7cn0NCmFsbF90cmlwc192MiAlPiUNCiAgbXV0YXRlKHdlZWtkYXkgPSB3ZGF5KHN0YXJ0ZWRfYXQsIGxhYmVsID0gVFJVRSkpICU+JQ0KICAgIGdyb3VwX2J5KG1lbWJlcl9jYXN1YWwsIHdlZWtkYXkpICU+JQ0KICAgICAgc3VtbWFyaXNlKG51bWJlcl9vZl9yaWRlcyA9IG4oKSwgYXZlcmFnZV9kdXJhdGlvbiA9IG1lYW4ocmlkZV9sZW5ndGgpKSAlPiUNCiAgICAgICAgYXJyYW5nZShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KSAlPiUNCiAgICAgICAgICBnZ3Bsb3QoYWVzKHggPSB3ZWVrZGF5LCB5ID0gYXZlcmFnZV9kdXJhdGlvbiwgZmlsbCA9IG1lbWJlcl9jYXN1YWwpKSArDQogICAgICAgICAgZ2VvbV9jb2wocG9zaXRpb24gPSAiZG9kZ2UiKQ0KYGBgDQoNCiMgYHIgZmEoImZpbGUtY3N2IiwgZmlsbCA9ICIjMjk2NDczIilgIEV4cG9ydCBTdW1tYXJ5IEZpbGUgZm9yIEZ1cnRoZXIgQW5hbHlzaXMNCg0KYGBge3J9DQpjb3VudHMgPC0gYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsICsNCiAgICAgICAgICAgICAgICAgICAgICBhbGxfdHJpcHNfdjIkZGF5X29mX3dlZWssIEZVTiA9IG1lYW4sKQ0Kd3JpdGUuY3N2KGNvdW50cywgZmlsZSA9ICdvdXRwdXRfQ1NWL2F2Z19yaWRlX2xlbmd0aC5jc3YnKQ0KYGBg</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkN5Y2xpc3RpYzogQ2FzdWFsIHZzIE1lbWJlciBSaWRlcnNoaXAiDQphdXRob3I6ICJHcmVnb3J5IFdoaXRtb3JlIg0KZGF0ZTogImByIGZvcm1hdChTeXMudGltZSgpLCAnJWQgJUIsICVZJylgIg0Kb3V0cHV0OiANCiAgaHRtbF9ub3RlYm9vazogDQogICAgdGhlbWU6IGpvdXJuYWwNCiAgICB0b2M6IHRydWUNCiAgICB0b2NfZmxvYXQ6IHRydWUNCiAgICBzbW9vdGhfc2Nyb2xsOiB0cnVlDQogICAgdG9jX2RlcHRoOiA0DQogICAgbnVtYmVyX3NlY3Rpb25zOiB0cnVlDQogICAgY3NzOiAiaHRtbC9zdHlsZS5jc3MiDQogICAgaW5jbHVkZXM6DQogICAgICBiZWZvcmVfYm9keTogImh0bWwvaGVhZGVyLmh0bWwiDQogICAgICBhZnRlcl9ib2R5OiAiaHRtbC9mb290ZXIuaHRtbCINCi0tLQ0KDQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0KIyBgciBmYSgici1wcm9qZWN0IiwgZmlsbCA9ICIjMjk2NDczIilgIEVudmlyb25tZW50IFNldHVwDQoNCmBgYCAgICAgICAgIA0KcmVhZHIgZm9yIGxvYWRpbmcgQ1NWIGZpbGVzDQpzY2FrZXMgZm9yIGJldHRlciBncmFwaCBzY2FsZXMNCnRpZHl2ZXJzZSBmb3Iga25pdHRpbmcgZmlsZQ0KY29uZmxpY3RlZCB0byBtYW5hZ2UgYW5kIHNldCBjb25mbGljdCByZXBhaXJzDQpnZ3Bsb3QgZm9yIHZpc3VhbHMNCmZvbnRhd2Vzb21lIGZvciBmaW5hbCB2aXN1YWwgbGF5b3V0DQpgYGANCg0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpDQpsaWJyYXJ5KHJlYWRyKSAjIGxvYWQgY3N2IGZpbGVzDQpsaWJyYXJ5KHNjYWxlcykgIyBiZXR0ZXIgY29udHJvbCBvZiBncmFwaCBzY2FsZXMNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShjb25mbGljdGVkKSAjIG5lZWRlZD8NCmxpYnJhcnkoZ2dwbG90MikgIyANCiNsaWJyYXJ5KGdnc2NpKQ0KI2xpYnJhcnkoZmxleGRhc2hib2FyZCkNCmxpYnJhcnkoZm9udGF3ZXNvbWUpICMgYXdlc29tZSBpY29ucyBpbiBUT0MNCmNvbmZsaWN0X3ByZWZlcigiZmlsdGVyIiwgImRwbHlyIikNCmNvbmZsaWN0X3ByZWZlcigibGFnIiwgImRwbHlyIikNCmBgYA0KDQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0KIyMgYHIgZmEoImZpbGUtY3N2IiwgZmlsbCA9ICIjMjk2NDczIilgIExvYWQgRGF0YSBmcm9tIENTVg0KDQpgYGB7ciBkYXRhbG9hZCwgZWNobz1UUlVFfQ0KcTFfMjAxOSA8LSByZWFkX2NzdigiQ1NWL0RpdnZ5X1RyaXBzXzIwMTlfUTEuY3N2IikNCnExXzIwMjAgPC0gcmVhZF9jc3YoIkNTVi9EaXZ2eV9Ucmlwc18yMDIwX1ExLmNzdiIpDQpgYGANCg0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQoNCiMgYHIgZmEoImJyb29tIiwgZmlsbCA9ICIjMjk2NDczIilgIENsZWFuIGFuZCBDb21iaW5lDQoNCiMjIFZlcmlmeSBDb2x1bW4gTmFtZXMNCg0KYGBge3IgcXVpY2stY29tcGFyZX0NCmNvbG5hbWVzKHExXzIwMTkpDQpjb2xuYW1lcyhxMV8yMDIwKQ0KYGBgDQoNCiMjIyBSZW5hbWUgQ29sdW1ucyBvZiAncTFfMjAxOS5jc3YnIGZvciBDb25zaXN0ZW5jeQ0KDQpgYGB7ciBjb2x1bW4tcmVuYW1lfQ0KKHExXzIwMTkgPC0gcmVuYW1lKHExXzIwMTkNCiAscmlkZV9pZCA9IHRyaXBfaWQNCiAscmlkZWFibGVfdHlwZSA9IGJpa2VpZA0KICxzdGFydGVkX2F0ID0gc3RhcnRfdGltZQ0KICxlbmRlZF9hdCA9IGVuZF90aW1lDQogLHN0YXJ0X3N0YXRpb25fbmFtZSA9IGZyb21fc3RhdGlvbl9uYW1lDQogLHN0YXJ0X3N0YXRpb25faWQgPSBmcm9tX3N0YXRpb25faWQNCiAsZW5kX3N0YXRpb25fbmFtZSA9IHRvX3N0YXRpb25fbmFtZQ0KICxlbmRfc3RhdGlvbl9pZCA9IHRvX3N0YXRpb25faWQNCiAsbWVtYmVyX2Nhc3VhbCA9IHVzZXJ0eXBlDQogKSkNCmBgYA0KDQojIyBJbnNwZWN0IHRoZSBEYXRhZnJhbWVzDQoNCmBgYHtyIGluc3BlY3Rpb24tcXVhcnRlcnN9DQpzdHIocTFfMjAxOSkNCnN0cihxMV8yMDIwKQ0KYGBgDQoNCiMjIyBDb252ZXJ0IHJpZGVfaWQgYW5kIHJpZGVhYmxlX3R5cGUgY29sdW1ucyB0byBDSFINCg0KYGBge3IgY2hhcmFjdGVyLWNvbnZ9DQpxMV8yMDE5IDwtIG11dGF0ZShxMV8yMDE5LCByaWRlX2lkID0gYXMuY2hhcmFjdGVyKHJpZGVfaWQpLCByaWRlYWJsZV90eXBlID0gYXMuY2hhcmFjdGVyKHJpZGVhYmxlX3R5cGUpKQ0KYGBgDQpgYGB7cn0NCnN0cihxMV8yMDE5KQ0KYGBgDQoNCiMgYHIgZmEoImJyb29tIiwgZmlsbCA9ICIjMjk2NDczIilgIENyZWF0ZSBhbmQgQ2xlYW4gTmV3IFRhYmxlICdhbGxfdHJpcHMnDQoNCiMjIFN0YWNrIFF1YXJ0ZXIgRGF0YWZyYW1lcyBpbnRvIE9uZQ0KDQpgYGB7ciBzdGFja2VtdXB9DQphbGxfdHJpcHMgPC0gYmluZF9yb3dzKHExXzIwMTksIHExXzIwMjApDQpgYGANCg0KIyMgUmVtb3ZlIGxhdCwgbG9uZywgYmlydGh5ZWFyLCBhbmQgZ2VuZGVyDQoNCmBgYHtyIHJlbW92YWwtdW5uZWN9DQphbGxfdHJpcHMgPC0gYWxsX3RyaXBzICU+JQ0KICBzZWxlY3QoLWMoc3RhcnRfbGF0LCBzdGFydF9sbmcsIGVuZF9sYXQsIGVuZF9sbmcsIGJpcnRoeWVhciwgZ2VuZGVyLCB0cmlwZHVyYXRpb24pKQ0KYGBgDQoNCiMjIExvYWQgJ2FsbF90cmlwcycgYW5kIFByZXZpZXcNCg0KYGBge3IgcXVpY2stY29tcGFyZTJ9DQpjb2xuYW1lcyhhbGxfdHJpcHMpDQojbnJvdyhhbGxfdHJpcHMpDQojZGltKGFsbF90cmlwcykNCiNoZWFkKGFsbF90cmlwcykNCiNzdHIoYWxsX3RyaXBzKQ0Kc3VtbWFyeShhbGxfdHJpcHMpICNvbmx5IG9uZSBsaW5lIG5lZWRlZA0KYGBgDQoNCiMjIENsZWFuICdtZW1iZXJfY2FzdWFsJyBDb2x1bW4gZm9yIENvbnNpc3RlbmN5DQoNCmBgYHtyIGZpeC1tZW1iZXJzfQ0KI3RhYmxlKGFsbF90cmlwcyRtZW1iZXJfY2FzdWFsKSAjdmlldyB0YWJsZSBmb3IgbWVtYmVyc2hpcHMNCmFsbF90cmlwcyA8LSBhbGxfdHJpcHMgJT4lDQogIG11dGF0ZShtZW1iZXJfY2FzdWFsID0gcmVjb2RlKG1lbWJlcl9jYXN1YWwgLCJTdWJzY3JpYmVyIiA9ICJtZW1iZXIiICwiQ3VzdG9tZXIiID0gImNhc3VhbCIpKQ0KdGFibGUoYWxsX3RyaXBzJG1lbWJlcl9jYXN1YWwpICN2ZXJpZnkgdGFibGUgdXBkYXRlIGNvbnRhaW5zIDIgdmFyaWFibGVzDQpgYGANCg0KIyMgU3BsaXQgRGF0ZSBpbnRvIENvbHVtbnMgZm9yIEJldHRlciBBZ2dyZWdhdGlvbg0KDQpgYGB7ciBzcGxpdHRoZWRhdGV9DQphbGxfdHJpcHMkZGF0ZSA8LSBhcy5EYXRlKGFsbF90cmlwcyRzdGFydGVkX2F0KSAjVGhlIGRlZmF1bHQgZm9ybWF0IGlzIHl5eXktbW0tZGQNCmFsbF90cmlwcyRtb250aCA8LSBmb3JtYXQoYXMuRGF0ZShhbGxfdHJpcHMkZGF0ZSksICIlbSIpDQphbGxfdHJpcHMkZGF5IDwtIGZvcm1hdChhcy5EYXRlKGFsbF90cmlwcyRkYXRlKSwgIiVkIikNCmFsbF90cmlwcyR5ZWFyIDwtIGZvcm1hdChhcy5EYXRlKGFsbF90cmlwcyRkYXRlKSwgIiVZIikNCmFsbF90cmlwcyRkYXlfb2Zfd2VlayA8LSBmb3JtYXQoYXMuRGF0ZShhbGxfdHJpcHMkZGF0ZSksICIlQSIpDQpgYGANCg0KIyMgQWRkICdyaWRlX2xlbmd0aCcgQ2FsY3VsYXRpb24gYW5kIE1ha2UgTnVtZXJpYw0KDQpgYGB7ciBjYWxjLXJpZGVsZW5ndGh9DQphbGxfdHJpcHMkcmlkZV9sZW5ndGggPC0gZGlmZnRpbWUoYWxsX3RyaXBzJGVuZGVkX2F0LGFsbF90cmlwcyRzdGFydGVkX2F0KQ0KI2lzLmZhY3RvcihhbGxfdHJpcHMkcmlkZV9sZW5ndGgpDQphbGxfdHJpcHMkcmlkZV9sZW5ndGggPC0gYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoYWxsX3RyaXBzJHJpZGVfbGVuZ3RoKSkNCmlzLm51bWVyaWMoYWxsX3RyaXBzJHJpZGVfbGVuZ3RoKSAjdmVyaWZ5IG51bWVyaWMNCmBgYA0KDQojIyBSZW1vdmUgdGhlIFJvd3Mgb2YgQmFkIERhdGENCg0KZGF0YSBmcmFtZSBpbmNsdWRlIGEgZmV3IGh1bmRyZWQgZW50cmllcyB3aGVuIGJpa2VzIHdlcmUgcmVtb3ZlZCBmb3Igc2VydmljZQ0KDQpgYGB7ciByZW1vdmUtc2VydmljZX0NCmFsbF90cmlwc192MiA8LSBhbGxfdHJpcHNbIShhbGxfdHJpcHMkc3RhcnRfc3RhdGlvbl9uYW1lID09ICJIUSBRUiIgfCBhbGxfdHJpcHMkcmlkZV9sZW5ndGg8MCksXQ0KYGBgDQoNCiMgYHIgZmEoIm1hZ25pZnlpbmctZ2xhc3MtY2hhcnQiLCBmaWxsID0gIiMyOTY0NzMiKWAgUHJlcGFyZSBEZXNjcmlwdGl2ZSBBbmFseXNpcw0KDQojIyBBbmFseXplIFJpZGUgTGVuZ3Rocw0KDQpgYGB7ciByaWRlbGVuZ3Roc30NCiNjYWxjdWxhdGUgYWxsIHJpZGUgbGVuZ3Rocw0KI21lYW4oYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKSAjYXZlcmFnZSAodG90YWwgcmlkZSBsZW5ndGggLyByaWRlcykNCiNtZWRpYW4oYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKSAjbWlkcG9pbnQgcmlkZSBsZW5ndGgNCiNtYXgoYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKSAjbG9uZ2VzdCByaWRlDQojbWluKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCkgI3Nob3J0ZXN0IHJpZGUNCiMgb3IgbW9yZSBzaW1wbHkgb24gb25lIGxpbmUNCnN1bW1hcnkoYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoKQ0KYGBgDQoNCiMjIENvbXBhcmUgQ2FzdWFsIGFuZCBNZW1iZXJzDQoNCmBgYHtyfQ0KYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsLCBGVU4gPSBtZWFuKQ0KYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsLCBGVU4gPSBtZWRpYW4pDQphZ2dyZWdhdGUoYWxsX3RyaXBzX3YyJHJpZGVfbGVuZ3RoIH4gYWxsX3RyaXBzX3YyJG1lbWJlcl9jYXN1YWwsIEZVTiA9IG1heCkNCmFnZ3JlZ2F0ZShhbGxfdHJpcHNfdjIkcmlkZV9sZW5ndGggfiBhbGxfdHJpcHNfdjIkbWVtYmVyX2Nhc3VhbCwgRlVOID0gbWluKQ0KYGBgDQoNCiMjIENvcnJlY3QgRGF5IG9mIFdlZWsgT3JkZXINCg0KYGBge3J9DQphbGxfdHJpcHNfdjIkZGF5X29mX3dlZWsgPC0gb3JkZXJlZChhbGxfdHJpcHNfdjIkZGF5X29mX3dlZWssIGxldmVscz1jKCJTdW5kYXkiLCAiTW9uZGF5IiwgIlR1ZXNkYXkiLCAiV2VkbmVzZGF5IiwgIlRodXJzZGF5IiwgIkZyaWRheSIsICJTYXR1cmRheSIpKQ0KYWdncmVnYXRlKGFsbF90cmlwc192MiRyaWRlX2xlbmd0aCB+IGFsbF90cmlwc192MiRtZW1iZXJfY2FzdWFsICsgYWxsX3RyaXBzX3YyJGRheV9vZl93ZWVrLCBGVU4gPW1lYW4pDQpgYGANCg0KIyBgciBmYSgiY2hhcnQtc2ltcGxlIiwgZmlsbCA9ICIjMjk2NDczIilgIEFuYWx5emUgUmlkZXJzaGlwIERhdGEgYnkgVHlwZSBhbmQgV2Vla2RheQ0KDQpgYGB7cn0NCmFsbF90cmlwc192MiAlPiUNCiAgbXV0YXRlKHdlZWtkYXkgPSB3ZGF5KHN0YXJ0ZWRfYXQsIGxhYmVsID0gVFJVRSkpICU+JSAjY3JlYXRlcyB3ZWVrZGF5IGZpZWxkIHVzaW5nIHdkYXkNCiAgICBncm91cF9ieShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KSAlPiUgI2dyb3VwcyBieSB1c2VydHlwZSBhbmQgd2Vla2RheQ0KICAgICAgc3VtbWFyaXNlKG51bWJlcl9vZl9yaWRlcyA9IG4oKSwgYXZlcmFnZV9kdXJhdGlvbiA9IG1lYW4ocmlkZV9sZW5ndGgpKSAlPiUNCiAgICAgICAgYXJyYW5nZShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KQ0KYGBgDQpgYGB7cn0NCg0KYGBgDQoNCiMjIFZpc3VhbGl6ZSBOdW1iZXIgb2YgUmlkZXMgYnkgUmlkZXIgVHlwZQ0KDQpgYGB7cn0NCmFsbF90cmlwc192MiAlPiUNCiAgbXV0YXRlKHdlZWtkYXkgPSB3ZGF5KHN0YXJ0ZWRfYXQsIGxhYmVsID0gVFJVRSkpICU+JQ0KICAgIGdyb3VwX2J5KG1lbWJlcl9jYXN1YWwsIHdlZWtkYXkpICU+JQ0KICAgICAgc3VtbWFyaXNlKG51bWJlcl9vZl9yaWRlcyA9IG4oKSwgYXZlcmFnZV9kdXJhdGlvbiA9IG1lYW4ocmlkZV9sZW5ndGgpKSAlPiUNCiAgICAgICAgYXJyYW5nZShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KSAlPiUNCiAgICAgICAgICBnZ3Bsb3QoYWVzKHggPSB3ZWVrZGF5LCB5ID0gbnVtYmVyX29mX3JpZGVzLCBmaWxsID0gbWVtYmVyX2Nhc3VhbCkpICsNCiAgICAgICAgICBzY2FsZV95X2NvbnRpbnVvdXMobGFiZWxzPWNvbW1hKSArDQogICAgICAgICAgZ2VvbV9jb2wocG9zaXRpb24gPSAiZG9kZ2UiKQ0KYGBgDQoNCiMjIFZpc3VhbGl6ZSBBdmVyYWdlIER1cmF0aW9uIGJ5IFJpZGVyIFR5cGUNCg0KYGBge3J9DQphbGxfdHJpcHNfdjIgJT4lDQogIG11dGF0ZSh3ZWVrZGF5ID0gd2RheShzdGFydGVkX2F0LCBsYWJlbCA9IFRSVUUpKSAlPiUNCiAgICBncm91cF9ieShtZW1iZXJfY2FzdWFsLCB3ZWVrZGF5KSAlPiUNCiAgICAgIHN1bW1hcmlzZShudW1iZXJfb2ZfcmlkZXMgPSBuKCksIGF2ZXJhZ2VfZHVyYXRpb24gPSBtZWFuKHJpZGVfbGVuZ3RoKSkgJT4lDQogICAgICAgIGFycmFuZ2UobWVtYmVyX2Nhc3VhbCwgd2Vla2RheSkgJT4lDQogICAgICAgICAgZ2dwbG90KGFlcyh4ID0gd2Vla2RheSwgeSA9IGF2ZXJhZ2VfZHVyYXRpb24sIGZpbGwgPSBtZW1iZXJfY2FzdWFsKSkgKw0KICAgICAgICAgIGdlb21fY29sKHBvc2l0aW9uID0gImRvZGdlIikNCmBgYA0KDQojIGByIGZhKCJmaWxlLWNzdiIsIGZpbGwgPSAiIzI5NjQ3MyIpYCBFeHBvcnQgU3VtbWFyeSBGaWxlIGZvciBGdXJ0aGVyIEFuYWx5c2lzDQoNCmBgYHtyfQ0KY291bnRzIDwtIGFnZ3JlZ2F0ZShhbGxfdHJpcHNfdjIkcmlkZV9sZW5ndGggfiBhbGxfdHJpcHNfdjIkbWVtYmVyX2Nhc3VhbCArDQogICAgICAgICAgICAgICAgICAgICAgYWxsX3RyaXBzX3YyJGRheV9vZl93ZWVrLCBGVU4gPSBtZWFuLCkNCndyaXRlLmNzdihjb3VudHMsIGZpbGUgPSAnb3V0cHV0X0NTVi9hdmdfcmlkZV9sZW5ndGguY3N2JykNCmBgYA0KDQojIEluc2VydCBUYWJsZWF1IFNuYXBzaG90IGFuZCBVUkwgdG8gUHVibGljIHNpdGUgZm9yIGludGVyYWN0aXZlIGRhc2hib2FyZCA=</div>
  
 <hr />
 <p style="text-align: center;">A work by <a href="https://creativepolymath.github.io/">Gregory Whitmore</a></p>
