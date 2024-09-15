@@ -49,10 +49,10 @@ Analyze historical bike trip data to identify trends in how annual members and c
 <div class="info">
   * readr for loading CSV files
   * scales for better graph scales
-  * tidyverse for knitting file
+  * tidyverse and dplyr for knitting file
   * conflicted to manage and set conflict repairs
-  * ggplot for visuals
-  * fontawesome for pretty notebook
+  * ggplot2 for visuals
+  * fontawesome & paletteer for a pretty notebook
 </div>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -63,7 +63,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #install.packages("conflicted")
 #install.packages("ggplot2")
 #install.packages("fontawesome")
-#install.packages("kableExtra")
+#install.packages("paletteer")
 library(readr)
 library(scales)
 library(tidyverse)
@@ -71,7 +71,7 @@ library(dplyr)
 library(conflicted)
 library(ggplot2)
 library(fontawesome)
-library(kableExtra)
+library(paletteer)
 conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
@@ -206,23 +206,23 @@ summary(all_trips_v2$ride_length)
 ```
 
 ## Compare Casual and Members
-
+<div class="info">
 ```{r}
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = mean)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = median)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = max)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = min)
 ```
-
+</div>
 ## Correct Day of Week Order
-
+<div class="info">
 ```{r}
 all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN =mean)
 ```
-
+</div>
 # `r fa("chart-simple", fill = "#296473")` Analyze Ridership Data by Type and Weekday
-
+<div class="info">
 ```{r}
 all_trips_v2 %>%
   mutate(weekday = wday(started_at, label = TRUE)) %>% #creates weekday field using wday
@@ -230,11 +230,7 @@ all_trips_v2 %>%
       summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
         arrange(member_casual, weekday)
 ```
-
-```{r}
-
-```
-
+</div>
 ## Visualize Number of Rides by Rider Type
 
 ```{r}
@@ -266,17 +262,20 @@ all_trips_v2 %>%
           labs(title = "Duration by Rider Type", fill= "Casual vs Member") +
           scale_fill_paletteer_d("PrettyCols::Bold")
 ```
+## Visualise Gender and Age Division of Riders
 ```{r}
 all_trips_v2 %>%
   filter(!is.na(gender)) %>%
-    filter(birthyear >= 1950L & birthyear <= 2003L & !is.na(birthyear)) %>%
-      ggplot() +
-      aes(x = birthyear, colour = gender) +
-      geom_histogram(bins = 20L, color = "white", fill = "#6da5b3") +
-      facet_wrap(vars(gender, member_casual)) +
-          scale_x_continuous(name="Birth Year") +
-          scale_y_continuous(name="Number of Rides") +
-          labs(title = "Gender and Age Divisiion of Riders")
+  filter(birthyear >= 1950L & birthyear <= 2003L & !is.na(birthyear)) %>%
+  ggplot() +
+  aes(x = birthyear, color = gender, fill = gender) +
+  geom_histogram(bins = 20L, show.legend = FALSE) +
+  facet_wrap(vars(member_casual, gender)) +
+  scale_x_continuous(name="Birth Year") +
+  scale_y_continuous(name="Number of Rides") +
+  labs(title = "Gender and Age Division of Riders") +
+  scale_fill_paletteer_d("PrettyCols::Bold") +
+  scale_color_paletteer_d("PrettyCols::Bold")
 ```
 
 # `r fa("file-csv", fill = "#296473")` Export Summary File for Further Analysis
