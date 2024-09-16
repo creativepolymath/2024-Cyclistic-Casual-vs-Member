@@ -3,6 +3,17 @@ title: "Cyclistic: Casual vs Member Ridership"
 author: "Gregory Whitmore"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    number_sections: true
+    df_print: paged
+    css: html/style.css
+    includes:
+      before_body: html/header.html
+      after_body: html/footer.html
   html_notebook:
     theme: flatly
     toc: true
@@ -15,11 +26,29 @@ output:
       before_body: html/header.html
       after_body: html/footer.html
     self-contained: true
-  html_document:
-    toc: true
-    toc_depth: '4'
-    df_print: paged
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(repr.plot.width=15, repr.plot.height=8)
+#install.packages("readr")
+#install.packages("scales")
+#install.packages("tidyverse")
+#install.packages("dplyr")
+#install.packages("conflicted")
+#install.packages("ggplot2")
+#install.packages("fontawesome")
+#install.packages("paletteer")
+library(readr)
+library(scales)
+library(tidyverse)
+library(dplyr)
+library(conflicted)
+library(ggplot2)
+library(fontawesome)
+library(paletteer)
+conflict_prefer("filter", "dplyr")
+conflict_prefer("lag", "dplyr")
+```
 
 # `r fa("address-card", fill = "#296473")` About the Company
 <div class="info">
@@ -52,27 +81,7 @@ Analyze historical bike trip data to identify trends in how annual members and c
   * ggplot2 for visuals
   * fontawesome & paletteer for a pretty notebook
 </div>
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-#install.packages("readr")
-#install.packages("scales")
-#install.packages("tidyverse")
-#install.packages("dplyr")
-#install.packages("conflicted")
-#install.packages("ggplot2")
-#install.packages("fontawesome")
-#install.packages("paletteer")
-library(readr)
-library(scales)
-library(tidyverse)
-library(dplyr)
-library(conflicted)
-library(ggplot2)
-library(fontawesome)
-library(paletteer)
-conflict_prefer("filter", "dplyr")
-conflict_prefer("lag", "dplyr")
-```
+
 
 ## `r fa("file-csv", fill = "#296473")` Load Data from CSV
 
