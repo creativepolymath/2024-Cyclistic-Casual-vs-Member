@@ -288,3 +288,10 @@ counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual +
                       all_trips_v2$day_of_week, FUN = mean,)
 write.csv(counts, file = 'output_CSV/avg_ride_length.csv')
 ```
+
+# `r fa("link", fill = "#296473")` Find this Project on the Web!
+<div class="info">
+[Kaggle Notebook in Python](https://www.kaggle.com/code/gregwhitmore/coursera-capstone-in-python-cyclistic-ridership)<br>
+[Kaggle Notebook in R](https://www.kaggle.com/code/gregwhitmore/coursera-capstone-in-r-cyclistic-ridership-study)<br>
+[Tableau Dashboard](https://public.tableau.com/app/profile/greg.whitmore/viz/Cyclistic-Casual-vs-Member-Ridership/CyclisticDashboard)
+</div>
