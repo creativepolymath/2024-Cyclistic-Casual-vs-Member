@@ -289,6 +289,19 @@ counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual +
 write.csv(counts, file = 'output_CSV/avg_ride_length.csv')
 ```
 
+# `r fa("tower-observation", fill = "#296473")` Observations
+<div class="info">
+  * Casual users have significantly longer rides on Sundays compared to members.<br>
+  * Casual users have much shorter rides on weekdays compared to members.<br>
+  * Casual users typically have longer ride lengths than members.<br>
+</div>
+# `r fa("tower-observation", fill = "#296473")` Recommendations
+<div class="info">
+  * Create weekend specific memberships plans, the "Weekend Warrior" plan.<br>
+  * Highlight benefits for daily commuters, the "Bike 2 Work" plan.<br>
+  * Implement a tiered membership to reward longer rides.<br>
+  * Create loyalty program with points, redeemed for merch from local partners.<br>
+</div>
 # `r fa("link", fill = "#296473")` Find this Project on the Web!
 <div class="info">
 [Kaggle Notebook in Python](https://www.kaggle.com/code/gregwhitmore/coursera-capstone-in-python-cyclistic-ridership)<br>
